@@ -1,0 +1,99 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family:robo;
+    src: url(fontes/idroid.otf) format(opentype);
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    margin: 0px 0px;
+    background-color: #84E1AD;
+    font-family:Arial, Helvetica, sans-serif;
+}
+header {
+    padding: 10px;
+    background-image: linear-gradient(to bottom,#39CC7A 20%, #1A5C38 );
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.614);
+    color: white;
+    text-align: center;
+}
+    
+#principal{
+        text-align: center;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.614);
+}
+#primeirop {
+    text-align: center;    
+}
+
+
+a {
+    margin: 16px 16px;
+    padding: 7px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover{
+    border-radius: 50%;
+    cursor: pointer;
+    background-color:rgba(255, 255, 255, 0.853) ;
+    color: #1A5C38;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.725);
+
+
+}
+
+main{
+    background-color: white;
+    width: 1000px;
+    margin: 0px auto 20px;
+    padding: 20px;
+    border-radius: 0px 0px 10px 10px;
+}
+
+p {
+    text-align: justify;
+    text-indent: 30px;
+}
+#fonte{
+    padding: 2px;
+    font-family: 'robo';
+    color: #1A5C38;
+}
+
+#fonte2 {
+    margin: 0px;
+    padding: 4px;
+    color: white;
+    background-color: #1A5C38;
+}
+
+.fonte {
+    padding: 2px;
+    font-family: 'robo';
+    color: #1A5C38;
+    background-image: linear-gradient(to right, #84E1AD, white);
+}
+
+.destaque {
+    color: #1A5C38;
+    font-weight: bold;
+}
+
+li {
+    text-decoration: underline;
+}
+footer{
+    background-color: #1A5C38;
+    color: white;
+    margin: 0px;
+}
+
+footer >p {
+    text-align: center;
+    padding: 10px;
+}

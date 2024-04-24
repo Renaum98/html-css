@@ -1,0 +1,58 @@
+@charset "UTF-8";
+* {
+    font-family: Arial, Helvetica, sans-serif
+}
+body {
+    background-image: radial-gradient(circle, #CABCB6 40%, #615954);
+    background-attachment: fixed;
+}
+main {
+    background-color: white;
+    text-align: center;
+    width: 800px;
+    height: fit-content;
+    margin: auto;
+    border-radius: 10%;
+    padding: 10px;
+    box-shadow: 10px 10px 20px #564f4c8d;
+    }
+h1 {
+    margin: auto;
+    width: 600px;
+    text-align: center;
+}
+img {
+    margin: 1px;
+    border-radius: 20%;
+}
+iframe {
+    box-shadow: 10px 10px 20px #564f4c8d;
+}
+div{
+    display: inline-block;
+    border-radius: 20%;
+    transition: transform 0.1s ease;
+
+}
+div:hover {
+    background-color: rgb(22, 143, 143);
+    border-radius: 20%;
+    box-shadow: 2pt 2pt 10pt rgba(6, 42, 42, 0.704);
+    transform: scale(1.1); /* para usar o efeito de zoom em um elemnto use o transition como no elemento a cima e em hover use o transform*/
+
+}
+div:active{
+    background-color: rgb(10, 59, 59);
+    border-radius: 20%;
+}
+.teste {
+    border-radius: 30%;
+}
+.teste:hover {
+    background-color: rgb(22, 143, 143);
+    border-radius: 30%;
+}
+.teste:active {
+    background-color: rgb(10, 59, 59);
+    border-radius: 30%;
+}

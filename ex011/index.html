@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mídias em HTML5</title>
+</head>
+<body>
+    <h1>Imagem Dinâmica</h1>
+    <p>Tente abrir esse site em varios dispositivos diferentes ou simplismente aumente o tamanho do seu navegador. </p>
+
+    <picture>
+        <source media="(max-width: 750px)" srcset="Imagens/foto-p.png" type="image/png"><!--usando o source media é de se entender que caso a pagina atinja 750pixels ele mostrara a imagem que indexar, precisa obedecer uma ordem correta se não, nao funciona-->
+        <source media="(max-width: 1000px)" srcset="Imagens/foto-m.png" type="image/png">
+      <img src="Imagens/foto-g.png" alt="foto de tamanho maior">
+    </picture>
+
+    <h1>reproduzindo audios</h1>
+    <p>vamos aprender a reproduzir audios em html5</p>
+    <audio src="midia/teste.mp3" controls autoplay></audio><!--use a tag "audio" para adicionar arquivo de audio no html, logo apos use o parametro "controls" para adicionar um controlador e "autoplay" para acrescentar um parametro de reprodução automatica --><!--os arquivos suportados em audio são: MP3, WAV e OGG-->
+    <p>Para fazer o download do Audio <a href="midia/teste.mp3" target="_blank">clique aqui</a></p>
+
+</body>
+</html>

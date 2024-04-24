@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+@font-face {
+    font-family: 'Amor';
+    src: url(fonte/lovestory.ttf) format(truetype);
+    font-weight: bold;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+:root {
+    --cor1: #2B332E;
+    --cor2: #3D614C;
+    --cor3: #36B66B;
+    --cor4: #72e2a1;
+
+    --fonte-principal: 'Playfair Display';
+    --fonte-titulo: 'Amor';
+}
+
+body {
+    background-image: radial-gradient(circle, var(--cor3), var(--cor4) );
+    font-family: var(--fonte-principal);
+    background-attachment: fixed;
+}
+
+header{
+    text-align: center;
+    padding: 40px;
+    font-family: var(--fonte-titulo);
+    font-size: 2em;
+    color: var(--cor2);
+    text-shadow: 10px 6px 10px rgba(0, 0, 0, 0.115);
+
+    
+}
+
+nav a {
+    background-color: white;
+    padding: 10px;
+    margin: 0px 20px 0px 20px;
+    border-radius: 10px;
+    color: var(--cor2);
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.277);
+    font-size: 1em;
+    transition-duration: 0.5s;
+}
+
+nav a:hover {
+    background-color: var(--cor2);
+    color: var(--cor4);
+}
+
+main {
+    background-color: white;
+    max-width: 1000px;
+    min-width: 320px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 55px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.277);
+}
+
+main h2 {
+    font-family: var(--fonte-titulo);
+    color: var(--cor2);
+    text-align: center;
+    text-shadow: 10px 6px 10px rgba(0, 0, 0, 0.233);
+    margin: 20px 0px;
+}
+
+main p {
+    margin: 10px 0px;
+    text-align: justify;
+    text-indent: 30px;
+    line-height: 2em;
+}
+

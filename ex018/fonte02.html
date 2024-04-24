@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fontes Externas</title>
+    <style>
+        @font-face {
+            font-family:'Storm Gust';
+            src: url('StormGust.otf') format(opentype), url(Storm\ Gust.ttf) format(truetype);
+            font-weight: normal;
+            font-style: normal;
+            /*
+            use "@" com font-face 
+            em font-family coloque um nome para fonte
+            em src: url coloque o caminho da fonte ( de onde esta sendo tirada)          
+            tipos de format:
+            - opentype (otf)
+            - truetype (ttf)
+            - embedded-opentype
+            - trutype-aat (Apple Advanced Typography)
+            - svg
+            */
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: aliceblue;
+        }
+        h1 {
+            font-family: 'Storm Gust', Times, serif;
+            font-size: 3em;
+            font-style: normal;
+            color: black;
+            text-align: center;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Titulo</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, quaerat ipsa corporis provident, eligendi ipsum quae quasi eos necessitatibus laborum voluptas et iusto ab asperiores nisi aliquid? Eligendi, veniam quasi.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim molestias eligendi tempore ipsam, ut repudiandae cum odit vitae nemo aliquid. Repellendus similique laudantium, debitis praesentium necessitatibus voluptates quae nam! Beatae!
+        </p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus cumque numquam, facilis nam at ad atque porro itaque aspernatur alias error necessitatibus provident rerum cupiditate totam temporibus. Molestias, aperiam tenetur!</p>
+
+    </main>
+</body>
+</html>

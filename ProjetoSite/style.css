@@ -36,7 +36,9 @@ body {
 }
 
 header{
-    text-align: center;
+    margin: auto;
+    max-width: 800px;
+    min-width: 300px;
     padding: 40px;
     font-family: var(--fonte-titulo);
     font-size: 2em;
@@ -47,15 +49,16 @@ header{
 }
 
 header > h1 {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.833);
     padding: 20px;
     border-radius: 0px 0px 20px 20px;
     margin: -40px 0px 0px 0px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.381);
+    text-align: center;
 }
 
 nav a {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.833);
     padding: 10px;
     margin: 0px 20px 0px 20px;
     border-radius: 10px;
@@ -73,7 +76,7 @@ nav a:hover {
 }
 
 main {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.833);
     max-width: 1000px;
     min-width: 320px;
     margin: auto;
@@ -86,6 +89,7 @@ main {
 
 main h2 {
     font-family: var(--fonte-titulo);
+    font-size: 2em;
     color: var(--cor2);
     text-align: center;
     text-shadow: 10px 6px 10px rgba(0, 0, 0, 0.233);
@@ -97,5 +101,11 @@ main p {
     text-align: justify;
     text-indent: 30px;
     line-height: 2em;
+    font-weight: bold;
 }
-
+ article {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 20px 0px 20px 0px;
+ }

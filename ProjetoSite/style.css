@@ -25,10 +25,14 @@
 }
 
 body {
-    background-image: radial-gradient(circle, var(--cor3), var(--cor4) );
+    background-image: url(imagens/fundo.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     font-family: var(--fonte-principal);
     background-attachment: fixed;
+    background-size: cover;
     min-width: 100vh;
+
 }
 
 header{

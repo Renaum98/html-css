@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teste</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1 {
+            text-align: center;
+            background-color: rgba(160, 246, 31, 0.614);
+            width: 50vw;
+            margin: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid black;
+        }
+
+        form {
+            max-width: 100vw;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        fieldset {
+            margin: auto;
+            background-color: rgba(160, 246, 31, 0.614);
+            max-width: 500px;
+            min-width: 150px;
+            border-radius: 10px;
+        }
+
+        fieldset.box {
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.304);
+        }
+
+
+        .botao{
+            background-color: darkgreen;
+            color: white;
+            border-radius: 10px;
+            padding: 5px;
+            font-weight: bold;
+        }
+        .botao:hover {
+            background-color: rgba(105, 161, 21, 0.614);
+            color: black ;
+            transform: scale(1.1);
+            transition: 0.5s;
+        }
+
+        #inome, #isbnome, #idata, #iemail {
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Ficha Cadastral</h1>
+    <form action="cadastro.php" method="post" autocomplete="on">
+        <fieldset class="box">
+            <legend>Dados Pessoais</legend>
+            <p>
+                <label for="inome">Nome:</label>
+                <input type="text" name="nome" id="inome" required placeholder="Primeiro nome">
+
+                <label for="isbnome">Sobrenome:</label>
+                <input type="text" name="sbnome" id="isbnome" required placeholder="Ultimo nome">
+            </p>
+
+            <p>
+                <label for="idata">Data de Nascimento</label>
+                <input type="date" name="data" id="idata">
+
+                <label for="iemail">Email:</label>
+                <input type="email" name="email" id="iemail" required>
+
+                <fieldset>
+                    <legend>Sexo</legend>
+                    <input type="radio" name="sexo" id="imasc">
+                    <label for="imasc">Masculino</label>
+                    
+                    
+                    <input type="radio" name="sexo" id="ifem">
+                    <label for="ifem">Feminino</label>
+                </fieldset>
+            </p>
+        </fieldset> <br>
+        <fieldset class="box">
+            <legend>Perguntas de Seleção</legend> <br>
+            <fieldset>
+                <legend>Doenças</legend>
+                
+                <label for="igripe">Gripe
+                    <input type="checkbox" name="gripe" id="igripe">
+                </label> <br>
+
+                <label for="itub">Tuberculose
+                    <input type="checkbox" name="tub" id="itub">
+                </label> <br>
+
+                <label for="iresp"> Respiratorio
+                    <input type="checkbox" name="resp" id="iresp">
+                </label> <br>
+
+                <label for="ifad">Fadiga
+                    <input type="checkbox" name="fad" id="ifad">
+                </label> <br>
+
+                <label for="itire">Tireoide
+                    <input type="checkbox" name="tire" id="itire">
+                </label> <br>
+
+            </fieldset> <br>
+
+            <fieldset>
+                <legend>Hobbies</legend>
+
+                <label for="imus">Ouvir Musica
+                    <input type="checkbox" name="mus" id="imus">
+                </label> <br>
+
+                <label for="igame">Jogar Video Game
+                    <input type="checkbox" name="game" id="igame">
+                </label> <br>
+
+                <label for="ibike"> Andar de Bicicleta
+                    <input type="checkbox" name="bike" id="ibike">
+                </label> <br>
+
+                <label for="icorrer">Correr
+                    <input type="checkbox" name="correr" id="icorrer">
+                </label> <br>
+
+                <label for="ilivro">Ler Livros
+                    <input type="checkbox" name="livro" id="ilivro">
+                </label> <br>
+
+                <label for="ipintar">Pintar
+                    <input type="checkbox" name="pintar" id="ipintar"> 
+                </label> <br>
+            </fieldset>
+        </fieldset> <br>
+        <input type="submit" value="Enviar" class="botao">
+        <input type="Reset" value="Limpar" class="botao">
+    </form>
+</body>
+</html>

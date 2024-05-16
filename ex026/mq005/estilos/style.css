@@ -14,10 +14,10 @@
     src: url(../fonts/space\ age.ttf) format(truetype);
 }
 body {
-    background-image: url(../imagens/cavaleiro.jpg);
+    background-image: url(../imagens/espaço.jpg);
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: 100vh;
+    background-size: cover;
     background-attachment: fixed;
 }
 
@@ -29,7 +29,7 @@ header > h1 {
     padding: 10px;
     text-align: center;
     color: whitesmoke;
-    font-size: 3em;
+    font-size: 2em;
     font-family: 'titulo';
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.589);
 }

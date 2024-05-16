@@ -4,15 +4,74 @@
     body {
         background-image: url(../imagens/espaço-tablet.jpg);
     }
+    
+    i#burguer {
+        display: none;
+    }
+    
+    menu {
+        display: block;
+    }
+    
+    li {
+        display: inline-block;
+    }
+    
+    a {
+        border-radius: 20px;
+        margin: 10px;
+    }
+    main {
+        width: 768px;
+    }
+
 }
 @media screen and (min-width: 992px) and (max-width: 1200) { /*desktop*/
     body {
         background-image: url(../imagens/espaço-desktop.jpg);
     }
+    i#burguer {
+        display: none;
+    }
+    
+    menu {
+        display: block;
+    }
+    
+    li {
+        display: inline-block;
+    }
+    
+    a {
+        border-radius: 20px;
+        margin: 10px;
+    }
+    main {
+        width: 992px;
+    }
 }
 @media screen and (min-width: 1200px) { /*telas maiores*/
     body {
         background-image: url(../imagens/espaço.jpg);
+    }
+    i#burguer {
+        display: none;
+    }
+    
+    menu {
+        display: block;
+    }
+    
+    li {
+        display: inline-block;
+    }
+    
+    a {
+        border-radius: 20px;
+        margin: 10px;
+    }
+    main {
+        width: 1200px;
     }
 }
 @media screen and (orientation: landscape){

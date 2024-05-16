@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="estilos/style.css" media="all">
     <link rel="stylesheet" href="estilos/telas.css">
 </head>
-<body>
+<body onresize="mudouTamanho">
     <header>
         <h1>Historias Fantasticas</h1>
     </header>
@@ -57,6 +57,13 @@
                 itens.style.display = 'none'
             } else {
                 itens.style.display = 'block'
+            }
+        }
+        function mudouTamanho() {
+            if (window.innerWidth >= 768) {
+                itens.style.display = 'block'
+            } else {
+                itens.style.display = 'none'
             }
         }
     </script>

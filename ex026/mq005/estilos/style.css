@@ -23,7 +23,7 @@ body {
 
 header {
     background-color: rgba(76, 55, 196, 0.729);
-    border-radius: 0px 0px 10px 10px;
+    border-radius: 0px 0px 20px 20px;
 }
 header > h1 {
     padding: 10px;
@@ -65,6 +65,7 @@ menu a {
     background-color:rgb(90, 64, 235);
     color: white;
     border-top: 2px solid lightgreen;
+    
 
 }
 menu a:hover {
@@ -96,4 +97,18 @@ article > p {
     text-indent: 20px;
     font-weight: bolder;
     line-height: 2em;
+}
+footer {
+    background-color: rgba(76, 55, 196, 0.729);
+    margin-top: 20px;
+    padding: 10px;
+    color: white;
+    
+    font-size: 1em;
+    text-align: center;
+    border-radius: 20px 20px 0px 0px;
+}
+span#destaque {
+    color: lightgreen;
+    font-weight: bolder;
 }

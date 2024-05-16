@@ -77,10 +77,11 @@ menu a:hover {
 
 main {
     width: 90vw;
-    background-color: rgba(255, 255, 255, 0.644);
+    background-color: rgba(255, 255, 255, 0.882);
     margin: auto;
     margin-top: 10px;
     padding: 10px;
+    border: 1px solid lightgreen;
     border-radius: 10px;   
 }
 article > h2 {

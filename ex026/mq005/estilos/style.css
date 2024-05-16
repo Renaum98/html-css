@@ -6,6 +6,7 @@
     margin: 0px;
     padding: 0px;
     font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
 }
 @font-face {
     font-family:'titulo';
@@ -15,9 +16,12 @@
     font-family: 'titulo2';
     src: url(../fonts/space\ age.ttf) format(truetype);
 }
-body {
+html {
     height: 100vh;
-    background-image: url(../imagens/espaço.jpg);
+}
+body {
+    
+    background-image: url(../imagens/espaço-celular.jpg);
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;

@@ -1,7 +1,23 @@
 @charset "UTF-8";
 
-@media only screen and (max-width: 600px) {
-    .background {
-        background-size: contain;
+@media screen and (min-width: 768px) and (max-width: 992px) { /*tablet*/
+    body {
+        background-image: url(../imagens/espaço-tablet.jpg);
     }
 }
+@media screen and (min-width: 992px) and (max-width: 1200) { /*desktop*/
+    body {
+        background-image: url(../imagens/espaço-desktop.jpg);
+    }
+}
+@media screen and (min-width: 1200px) { /*telas maiores*/
+    body {
+        background-image: url(../imagens/espaço.jpg);
+    }
+}
+@media screen and (orientation: landscape){
+    body {
+        background-image: url(../imagens/espaço.jpg);
+    }
+}
+    

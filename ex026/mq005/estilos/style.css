@@ -14,10 +14,11 @@
     src: url(../fonts/space\ age.ttf) format(truetype);
 }
 body {
+    height: 100vh;
     background-image: url(../imagens/espaço.jpg);
-    background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+    background-repeat: no-repeat;
     background-attachment: fixed;
 }
 

@@ -17,7 +17,7 @@ body {
     background-image: url(../imagens/cavaleiro.jpg);
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: 100vh;
+    background-size: cover;
     background-attachment: fixed;
 }
 

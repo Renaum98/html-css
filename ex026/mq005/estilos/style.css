@@ -17,8 +17,8 @@ body {
     background-image: url(../imagens/cavaleiro.jpg);
     background-repeat: no-repeat;
     background-position: center top;
-    background-size: cover;
-    background-attachment: scroll;
+    background-size: 100vh;
+    background-attachment: fixed;
 }
 
 header {
@@ -33,16 +33,28 @@ header > h1 {
     font-family: 'titulo';
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.589);
 }
-menu {
+#burguer {
+    background-color: rgba(76, 55, 196, 0);
     display: block;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    width: 40px;
+    margin: auto;
+    margin-bottom: 10px;
+}
+#burguer:hover {
+    background-color: rgb(0, 89, 0);
+    transition: .3s;
+    border-radius: 20px;
+}
+menu {
+    display: none;
 }
 
 menu > ul {
     list-style-type: none;
-}
-
-menu > ul > li {
-    display: inline-block; 
 }
 
 menu a {
@@ -50,16 +62,15 @@ menu a {
     padding: 10px;
     text-decoration: none;
     text-align: center;
-    background-color:rgba(90, 64, 235, 0.956);
+    background-color:rgb(90, 64, 235);
     color: white;
     border-top: 2px solid lightgreen;
-    border-radius: 0px 10px 10px 10px;
-    margin-bottom: 10px;
-    margin-left:10px ;
+
 }
 menu a:hover {
-    background-color: rgb(0, 89, 0, 0.729);
+    background-color: rgb(0, 89, 0);
     transition: .5s;
+    color: lightgreen;
 }
 
 main {

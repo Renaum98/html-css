@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Grid</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            text-align: center;
+            font-size: 1.2em;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        section {
+            background-color: cadetblue;
+
+            display: grid;
+            height: 100vh;
+            width: 100vw;
+            
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 100px) ;
+
+
+            gap: 2px;
+
+            
+
+            /* os elementos abaixo são usados no container ou pai quando se trata de um alinhamento geral
+            align-items: ;
+            align-content: ; faz um alinhamento na horizontal
+            justify-content: ; faz um alinhamento na vertical
+            justify-items: ;*/
+        }
+        div {
+            background-color: brown;
+            
+            
+            /*align-self: ; usando o align-self ele trabalha como um alinhamento dele mesmo na vertical
+            
+            justify-self: ; usando o justify-self ele trabalha como um alinhamento dele mesmo na horizontal
+            
+            place-self: center; usando o place-self ele trabalha como um alinhamento tanto na horizontal como na vertical*/
+            
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <section>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+</body>
+</html>

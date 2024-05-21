@@ -5,6 +5,11 @@ em HTML é id    = em CSS é: #
 em HTML é class = em CSS é: .
 
 */
+::-webkit-scrollbar {
+    height: 0px;
+    width: 0px;
+}
+
 body {
     background-color: rgb(206, 206, 182);
     font-family: Arial, Helvetica, sans-serif;

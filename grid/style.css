@@ -53,6 +53,7 @@ h1 {
 /*css flexbox 1*/
 
 .flex {
+    background-color: aqua;
     display: flex;  
     flex-wrap: wrap; 
     max-width: 800px;

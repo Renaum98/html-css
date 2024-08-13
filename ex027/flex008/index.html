@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexible Box</title>
+    <style>
+        .conteiner {
+            background-color: lightsalmon;
+
+
+            display: flex;
+            flex-flow: row wrap;
+            align-items: flex-start;
+            height: 400px;
+        
+        }
+        .item {
+            background-color: lightblue;
+            border: 1px solid black;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #ia {
+            
+        }
+        #ib {
+            align-self: auto; /* com o auto sera herdado a configuração de alinhamento na vertical do elemento pai/conteiner */
+        }
+        #ic {
+           align-self: flex-end;
+        }
+        #id {
+            
+        }
+        #ie {
+           align-self: center; 
+        }
+        #if {
+            align-self: flex-start; 
+        }
+        #ig {
+            align-self: stretch;
+        }
+    </style>
+</head>
+<body>
+    <div class="conteiner">
+        <div class="item" id="ia">A</div>
+        <div class="item" id="ib">B</div>
+        <div class="item" id="ic">C</div>
+        <div class="item" id="id">D</div>
+        <div class="item" id="ie">E</div>
+        <div class="item" id="if">F</div>
+        <div class="item" id="ig">G</div>
+    </div>
+</body>
+</html>

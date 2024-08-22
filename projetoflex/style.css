@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, whitesmoke, grey);
+    font-size: 1.2em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#perfil > img{
+    display: block;
+    margin: auto;
+    border-radius: 50%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.515);
+}
+
+main {
+    background-image: linear-gradient(to bottom, white , rgba(255, 255, 255, 0.611));
+    width: 90%;
+    height: 98vh;
+    margin: auto;
+    border-radius: 10px;
+}
+nav{
+    display: flex;
+    justify-content: space-evenly;
+}
+div.menu{
+    margin: 0px 10px 10px 10px;
+    flex: 0 1 300px;
+    padding: 10px;
+    background-color: rgb(118, 118, 118);
+    
+    text-align: center;
+    
+    border-radius: 0px 0px 20px 20px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.348);
+
+}
+div.menu:hover{
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+    border-radius: 10px;
+    
+    
+    background-color: whitesmoke;
+}
+div.menu > a {
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+div.menu > a:hover {
+    color: black;
+    transition-duration: 1em;
+}
+
+article {
+    width: 50%;
+    text-align: justify;
+    margin: auto;
+    
+}
+article > h1 {
+    text-align: center;
+    padding: 10px;
+}
+
+#player {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#player > a > img {
+    width: 200px;   
+}
+
+    
+

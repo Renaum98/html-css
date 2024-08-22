@@ -15,28 +15,27 @@
             background-color: lightblue;
             border: 1px solid rgba(0, 0, 0, 0.329);
             text-align: center;
-            /*flex-basis: 250px;
-            flex-shrink: 1; /* com esse comando ele determina que o item diminua caso o container diminua usando valor 0 para negativo e 1 para positivo*/
+            flex-basis: 200px
+            /*flex-shrink: 1; /* com esse comando ele determina que o item diminua caso o container diminua usando valor 0 para negativo e 1 para positivo*/
             /*flex-grow: 1; /* com esse comando ele determina que o item aumente caso o container diminua usando valor 0 para negativo e 1 para positivo*/
             /*so é possivel usar esses comando quando a configuração de flex-flow é 'nowrap'*/
             /* caso se use o flex-grow/flex-shrink com um valor superior a 1, quer dizer que ele vai crescer ou diminuir com base no valor 
             ex:
-            se for colocado 2 em um valor de flew-grow que dizer que vai crescer o dobro do numero menor que ele */
+            se for colocado 2 em um valor de flex-grow quer dizer que vai crescer o dobro do numero menor que ele */
         }
         #a{
-            flex-basis: 150px;
-            flex-grow: 0;
-            flex-shrink: 1;
-        }
-        #b{
-            flex-basis: 150px;
-            flex-grow: 2;
+            
+            flex-grow: 1;
             flex-shrink: 0;
         }
-        #c{
-            flex-basis: 150px;
+        #b{
+        
             flex-grow: 1;
-            flex-shrink: 2;
+            flex-shrink: 1;
+        }
+        #c{
+            flex-grow: 1;
+            flex-shrink: 8;
         }
     </style>
 </head>

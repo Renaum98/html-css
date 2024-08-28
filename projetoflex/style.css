@@ -142,6 +142,10 @@ legend {
 fieldset > div {
     margin: 20px;
 }
+input {
+    padding: 5px;
+}
+
 div > #botao {
     padding: 5px;
     background-color: darkgray;
@@ -154,6 +158,8 @@ div > #botao:hover {
     background-color: white;
     color:darkgray;
 }
+
+
 
 
 

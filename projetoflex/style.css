@@ -123,7 +123,8 @@ article > p {
 }
 
 #frame {
-    height: 400px;
+    
+    height: 300px;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -71,14 +71,19 @@ div.menu > a:hover {
 }
 
 article {
-    width: 60%;
-    min-width: 400px;
+    background-color: aqua;
+    max-width: 90%;
+    min-width: 300px;
     text-align: justify;
     margin: auto;
 }
 
 article > h1 {
     text-align: center;
+    padding: 10px;
+}
+
+article > p {
     padding: 10px;
 }
 

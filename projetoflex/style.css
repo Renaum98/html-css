@@ -1,17 +1,23 @@
 @charset "UTF-8";
 
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+
+}
 * {
     margin: 0px;
     padding: 0px;
 }
 
 body {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background-image: linear-gradient(to bottom, whitesmoke, grey);
     background-attachment: fixed;
     font-size: 1.2em;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
 }
 #perfil {
     display: flex;
@@ -71,7 +77,6 @@ div.menu > a:hover {
 }
 
 article {
-    background-color: aqua;
     max-width: 90%;
     min-width: 300px;
     text-align: justify;
@@ -97,11 +102,12 @@ article > p {
 }
 
 #capa > a {
-    display: flex; /* Adicione isto se você deseja que o elemento <a> também seja flexível */
+    display: flex;
+    
 }
 
-#capa > a > img { /* Corrija o seletor para img, não .imagem */
-    width: 200px;
+#capa > a > img { 
+    width: 130px;
     margin: 5px;
     padding: 0px;
     border-radius: 20px;

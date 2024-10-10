@@ -22,31 +22,39 @@ header {
     color: whitesmoke;
     padding: 10px;
     
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    
 }
 header > h1 {
     border: 1px dotted black;
-    height: 50px;
+    flex: 0 0 200px;
 }
 nav {
     border: 1px dotted black;
     display: flex;
-    justify-content: flex-start; 
+    flex-flow: row wrap;
+    justify-content: flex-end;
 }
 nav > a {
     background-color: black;
-    padding: 15px 2px 15px 2px;
-    margin: 5px 5px 5px 5px;
-    flex: 0 1 150px;
-    text-align: center;
     color: lightgray;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    text-align: center;
     text-decoration: none;
     font-weight: bolder;
+
 }
 nav > a:hover {
     color:black;
     background-color: lightgray;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.595);
     font-weight: bolder;
+    transition: background-color .5s;
 }
 main {
     background-color: white;
@@ -61,9 +69,4 @@ main > h2 {
 }
 main > p {
     text-align: justify;
-    text-indent: 10px;
-    line-height: 1.5em;
-}
-hr {
-    background-color: black;
 }

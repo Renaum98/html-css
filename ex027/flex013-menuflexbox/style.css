@@ -29,11 +29,9 @@ header {
     
 }
 header > h1 {
-    border: 1px dotted black;
     flex: 0 0 200px;
 }
 nav {
-    border: 1px dotted black;
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-end;
@@ -69,4 +67,16 @@ main > h2 {
 }
 main > p {
     text-align: justify;
+}
+
+/*Tela de Celular*/@media screen and (max-width: 580px){
+    header, header > nav {
+        flex-flow: column nowrap;
+    }
+    header > h1 {
+        flex-basis: 50px;
+    }
+    header > nav > a {
+        width: 90vw;
+    }
 }

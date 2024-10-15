@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo :has()</title>
+    <style>
+        /* Seleciona um contêiner que contém um parágrafo */
+        .container:has(p) {
+            border: 2px solid blue; /* Adiciona uma borda azul ao contêiner se ele tiver um parágrafo */
+        }
+
+        p {
+            color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>Este contêiner tem um parágrafo.</p>
+    </div>
+    <div class="container">
+        <span>Este contêiner não tem um parágrafo.</span>
+    </div>
+    
+    
+</body>
+</html>

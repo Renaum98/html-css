@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo :not()</title>
+    <style>
+        /* Aplica um fundo vermelho a todos os parágrafos, exceto ao que tem a classe "especial" */
+        p {
+            background-color: red;
+            color: white;
+            padding: 10px;
+        }
+
+        p:not(.especial) {
+            background-color: red;
+        }
+
+        p.especial {
+            background-color: green; /* Aplica um fundo verde ao parágrafo especial */
+        }
+    </style>
+</head>
+<body>
+    <p>Parágrafo 1</p>
+    <p class="especial">Parágrafo 2 (especial)</p>
+    <p>Parágrafo 3</p>
+</body>
+</html>

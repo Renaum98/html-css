@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animação</title>
+    <STYLE>
+        body{
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        @keyframes animacao {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(100px);
+                opacity: 0.5;
+            }
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            cursor: pointer;
+            
+        }
+        div:hover {
+            animation-name: animacao;
+            animation-duration: 1s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite; /* Para repetir a animação indefinidamente */
+        }
+    </STYLE>
+</head>
+<body>
+    <div>EFEITO</div>
+</body>
+</html>

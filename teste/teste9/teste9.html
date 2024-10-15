@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utilizando Collums</title>
+    <style>   
+    .layout-pai{
+        width: min(1000px, 100%) /*largura responsiva*/;
+        margin: 0 auto; /*centraliza o layout*/
+        columns: 2 300px;
+        column-gap: 1em;
+    }
+    img{
+        width: 100%; /*faz a automação do tamanho da imagem*/
+        display: block;
+        margin-bottom: 1em;
+        border-radius: 10px;
+            
+    }
+    </style>
+</head>
+<body>
+    <div class="layout-pai">
+        <img width = "300px" src="img1.jpg" alt="">
+        <img width = "300px" src="img2.jpg" alt="">
+        <img width = "300px" src="img3.jpg" alt="">
+        <img width = "300px" src="img4.jpg" alt="">
+        <img width = "300px" src="img5.jpg" alt="">
+        <img width = "300px" src="img6.jpg" alt="">
+    </div>
+</body>
+</html>

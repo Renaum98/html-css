@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body {
+            height: 100vh;
+            width: 100vw;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background: url(fundo.jpg);
+            background-size: cover;
+        }
+        main{
+            height: 100%;
+            width: 100%;
+            
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .tela-login{
+            max-width: 300px;
+            width: 70%;
+            height: 80%;
+            
+            border-radius: 20px;
+
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-flow: column nowrap;
+
+        }
+        .caixa{
+            width: 100%;
+            height: 50%;
+            border: 1px solid grey;
+            border-radius: 20px;
+
+            align-content: center;
+            text-align: center;
+
+        }
+        #caixa1{
+            background-color: rgba(255, 255, 255, 0.121);
+            border-radius: 20px 20px 0px 0px ;
+            backdrop-filter: blur(5px);
+        }
+        #caixa2{
+            background-color: #763ba2;
+            color: white;
+            border-radius: 0px 0px 20px 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: column nowrap;
+        }
+        #caixa3{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <div class="tela-login">
+            <div class="caixa" id="caixa1">
+                <h1>Site Maneiro</h1>
+            </div>
+            <div class="caixa" id="caixa2">
+                <label for="n.email">E-mail:</label>
+                <input type="email" name="n.email" id="id-email">
+
+                <label for="n.senha">Senha:</label>
+                <input type="password" name="n.senha" id="id-senha">
+
+            </div>
+            <div id="caixa3">
+                <input type="button" value="Enviar">
+                <input type="button" value="Esqueci a Senha">
+            </div>
+        </div>
+    </main>
+</body>
+</html>

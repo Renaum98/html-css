@@ -9,6 +9,7 @@
 body{
     width: 100vw;
     height: 100vh;
+    background-image: linear-gradient(to bottom, grey ,rgba(44, 44, 44, 0.493));
     
     display: flex;
     justify-content: center;
@@ -69,21 +70,23 @@ main{
     margin-top: 20px;
     width:232px;
     height: 580px;
-    z-index: -1;
+    
 }
 section{
-    width: min(10000px, 100%) /*largura responsiva*/;
-    margin: 0 auto; /*centraliza o layout*/
-    columns: 4;
-    column-gap: 1em;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center; 
 }
-section>img{
-    margin: auto;
-    width: 100% ;/*faz a automação do tamanho da imagem*/
-    display: block;
-    margin-bottom: 1em;
-    border-radius: 10px;
+.logo{
+    flex: 1 1 50px;
+    background-color: rgba(0, 0, 0, 0.348);
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    margin: 10px;
+    border-radius: 20px;   
 }
+
 footer{
     
     height: 80px;

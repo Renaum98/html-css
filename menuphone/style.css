@@ -9,6 +9,8 @@
 body{
     width: 100vw;
     height: 100vh;
+    background-image: linear-gradient(to bottom, pink, orange);
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,10 +28,16 @@ body{
     align-items: center;
 }
 #container{
+    
+    background-size: cover;
+    background-color: aquamarine;
     margin-left: 4px;
     width: 260px;
     height: 569px;
     border-radius: 30px;
+
+    position: relative;
+    z-index: -1;
 
     display: flex;
     flex-flow: column nowrap;
@@ -53,20 +61,49 @@ header>div{
     font-size: 12px;
     width: 55px;
 }
+header>#horario{
+    font-weight:bolder;
+}
+header>#icones{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: bolder;
+}
 main{
-    background-color: aqua;
-    margin-top: 10px;
-    width:260px;
+    
+    margin: auto;
+    margin-top: 20px;
+    width:232px;
     height: 580px;
     z-index: -1;
 }
+section{
+    width: min(1000px, 100%) /*largura responsiva*/;
+    margin: 0 auto; /*centraliza o layout*/
+    columns: 4;
+    column-gap: 1em;
+}
+section>img{
+    margin: auto;
+    width: 100%; /*faz a automação do tamanho da imagem*/
+    display: block;
+    margin-bottom: 1em;
+    border-radius: 10px;
+}
+
 footer{
-    border: 1px solid black;
+    
     height: 80px;
     border-radius: 20px;
     margin-bottom: 10px;
     margin: 10px 10px 10px 10px;
     background-color: rgba(0, 0, 0, 0.468);
     backdrop-filter: blur(7px);
+
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
+
 

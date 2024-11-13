@@ -9,8 +9,7 @@
 body{
     width: 100vw;
     height: 100vh;
-    background-image: radial-gradient(circle, rgb(3, 122, 140), rgb(187, 1, 197));
-
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,7 +27,7 @@ body{
     align-items: center;
 }
 #container{
-    background: url(fundocel.jpg);
+    background-image: radial-gradient(circle, rgba(3, 122, 140, 0.942), rgb(187, 1, 197));
     background-size: cover;
     margin-left: 4px;
     width: 260px;
@@ -53,7 +52,6 @@ header{
 }
 header>div{
     text-align: center;
-    color: rgb(155, 155, 155);
     font-size: 12px;
     width: 55px;
 }
@@ -67,7 +65,6 @@ header>#icones{
     font-weight: bolder;
 }
 main{
-    
     margin: auto;
     margin-top: 20px;
     width:232px;
@@ -82,7 +79,7 @@ section{
 }
 section>img{
     margin: auto;
-    width: 100% /*faz a automação do tamanho da imagem*/
+    width: 100% ;/*faz a automação do tamanho da imagem*/
     display: block;
     margin-bottom: 1em;
     border-radius: 10px;
@@ -93,7 +90,7 @@ footer{
     border-radius: 20px;
     margin-bottom: 10px;
     margin: 10px 10px 10px 10px;
-    background-color: rgba(255, 255, 255, 0.066);
+    background-color: rgba(0, 0, 0, 0.348);
     backdrop-filter: blur(7px);
 
     display:flex;

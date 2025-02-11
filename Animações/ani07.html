@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animação 07</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #000;
+            overflow: hidden;
+        }
+        .fluid {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(45deg, #03e9f4, #ff00cc);
+            border-radius: 50%;
+            animation: animateFluid 2s linear infinite;
+        }
+        @keyframes animateFluid {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.5);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="fluid"></div>
+</body>
+</html>

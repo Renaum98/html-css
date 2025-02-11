@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animação 02</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(34, 81, 184);
+            color: white;
+        }
+        #conteiner{
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #caixa{
+            width: 50px;
+            height: 50px;
+            border: 6px solid rgb(95, 195, 228);
+            border-radius: 4px;
+            margin: 20px;
+            box-shadow: 0 0 8px rgb(95, 195, 228),0 0 8px rgb(95, 195, 228) inset;
+            animation: 2s girar ease-in-out infinite;
+
+            
+        }
+        @keyframes girar{
+            0%{
+                transform: rotate(0) rotateY(0) rotateZ(0);
+            }
+            33%{
+                transform: rotate(180deg) rotateY(0) rotateZ(0);
+            }
+            67%{
+                transform: rotate(180deg) rotateY(180deg) rotateZ(0);
+            }
+            100%{
+                transform: rotate(180deg) rotateY(180deg) rotateZ(180deg);
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="conteiner">
+        <div id="caixa"></div>
+    </div>
+</body>
+</html>

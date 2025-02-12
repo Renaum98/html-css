@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .copo{
+            width: 200px;
+            height: 400px;
+            background-color:rgb(173, 216, 230);
+            border-radius: 0 0 20px 20px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .copo::before{
+            content: '';
+            width: 100%;
+            height: 40px;
+            background-color: rgb(234, 236, 237);
+            position: absolute;
+            top: -20px;
+            left: 0;
+            border-radius: 50%;
+        }
+        .liquido{
+            width: 100%;
+            height: 0;
+            background-color: rgb(15, 139, 181);
+            position: absolute;
+            bottom: 0;
+            animation: encher 10s ease-in-out infinite;
+        }
+        @keyframes encher {
+            0%, 100% {
+                height: 0;
+            }
+            50% {
+                height: 70%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="copo">
+        <div class="liquido"></div>
+    </div>
+</body>
+</html>

@@ -5,11 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
         body{
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-flow: column nowrap;
         }
         .copo{
             width: 200px;
@@ -19,6 +26,7 @@
             position: relative;
             overflow: hidden;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 10px;
         }
         .copo::before{
             content: '';
@@ -36,6 +44,7 @@
             background-color: rgb(15, 139, 181);
             position: absolute;
             bottom: 0;
+            right: 1px;
             animation: encher 10s ease-in-out infinite;
         }
         @keyframes encher {
@@ -46,11 +55,26 @@
                 height: 70%;
             }
         }
+        .teste{
+            margin: 10px;
+        }
+        .teste h1{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image:linear-gradient(45deg, rgb(15, 139, 181), rgb(173, 216, 230), rgb(15, 139, 181));
+            background-clip: text;
+            color: transparent;
+        }
     </style>
 </head>
 <body>
     <div class="copo">
         <div class="liquido"></div>
+    </div>
+    <div class="teste">
+        <h1>TESTE DE ANIMAÇÃO</h1>
     </div>
 </body>
 </html>

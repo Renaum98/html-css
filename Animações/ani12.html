@@ -22,8 +22,7 @@
             width: 300px;
             height: 300px;
             border-radius: 50%;
-            border: 1px solid rgba(0, 0, 0, 0.496);
-            background-color: #3c3c3c;
+            background-image: radial-gradient(circle,#464646,#151515);
             position: relative;
         }
         #hora,#minuto,#segundo,#centro{
@@ -39,6 +38,7 @@
             height: 110px;
             top: 40px;
             left: 50%;
+            background-image: linear-gradient(to bottom,rgb(101, 101, 101,#272727));
             box-shadow: 0 0 10px black;
             z-index: 0;
             animation: rotateHour 43200s linear infinite;
@@ -49,7 +49,7 @@
             height: 80px;
             top: 70px;
             left: 50%;
-            background-color: blue;
+            background-image:linear-gradient(to bottom,blue,rgb(2, 2, 116));
             box-shadow: 0 0 10px blue;
             animation: rotateMinute 3600s linear infinite;
         }
@@ -60,7 +60,7 @@
             top: 50px;
             left: 50%;
             box-shadow: 0 0 10px red;
-            background-color: red;
+            background-image:linear-gradient(to bottom, red,rgb(152, 0, 0));
             animation: rotateSecond 60s linear infinite;
         }
         #centro{
@@ -69,7 +69,7 @@
             left: 142px;
             top: 140px;
             box-shadow: 0 0 15px;
-
+            border: 1px solid rgba(0, 0, 0, 0.427);
         }
         ul{
             width: 300px;
@@ -77,13 +77,14 @@
             border-radius: 50%;
             list-style: none;
             position: relative;
-            font-size: 1.2em;
-            color: whitesmoke;
+            font-size: 1.5em;
+            color: rgb(177, 177, 177);
         }
         li{
             position: absolute;
-            
             padding: 5px;
+            font-weight: bolder;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.378);
         }
         #n12{
             top: 0;
@@ -103,7 +104,7 @@
         }
         #n02{
             right: 16px;
-            top: 75px;
+            top: 71px;
         }
         #n01{
             right: 64px;
@@ -115,11 +116,23 @@
         }
         #n10{
             left: 16px;
-            top: 75px;
+            top: 71px;
         }
         #n04{
-            bottom: 0;
-            right: 0;
+            bottom: 71px;
+            right: 16px;
+        }
+        #n05{
+            right: 64px;
+            bottom: 20px;
+        }
+        #n07{
+            left: 64px;
+            bottom: 20px;
+        }
+        #n08{
+            bottom: 71px;
+            left: 16px;
         }
         @keyframes rotateHour {
             from {

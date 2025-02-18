@@ -24,33 +24,75 @@
             border: 1px solid black;
             position: relative;
         }
-        #segundo{
+        #hora,#minuto,#segundo{
+            position: absolute;
+            background-color: #333;
+            transform-origin: bottom center;
             border-radius: 20px;
-            height: 20px;
-            width: 150px;
-            border: 1px solid black;
-            position: relative;
-            left: 25%;
-            top: 25%;
-            transform: rotate(90deg);
-            animation: rodar 60s linear 1s infinite;
+            border: 1px solid rgba(0, 0, 0, 0.189);
+
         }
-        @keyframes rodar {
-            0%{
+        #hora {
+            width: 6px;
+            height: 150px;
+            top: 0px;
+            left: 150px;
+            animation: rotateHour 43200s linear infinite;
+        }
+
+        #minuto {
+            width: 4px;
+            height: 80px;
+            top: 70px;
+            left: 150px;
+            animation: rotateMinute 3600s linear infinite;
+            background-color: blue;
+        }
+
+        #segundo{
+            width: 2px;
+            height: 90px;
+            top: 60px;
+            left: 150px;
+            background-color: red;
+            animation: rotateSecond 60s linear infinite;
+        }
+
+        #centro {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background-color: #333;
+            border-radius: 50%;
+            top: 140px;
+            left: 146px;
+        }
+
+        @keyframes rotateHour {
+            from {
                 transform: rotate(0deg);
             }
-            100%{
+            to {
                 transform: rotate(360deg);
             }
         }
-        #segundo::before{
-            content: "";
-            width:20px;
-            height: 20px;
-            border-radius: 50px;
-            background-color: black;
-            position: absolute;
-            left: 130px;
+
+        @keyframes rotateMinute {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes rotateSecond {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
         }
     </style>
 </head>
@@ -59,6 +101,7 @@
         <div id="hora"></div>
         <div id="minuto"></div>
         <div id="segundo"></div>
+        <div id="centro"></div>
     </div>
 </body>
 </html>

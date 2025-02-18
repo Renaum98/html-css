@@ -13,6 +13,7 @@
         body,html{
             width: 100vw;
             height: 100vh;
+            background-color: #272727;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -21,53 +22,94 @@
             width: 300px;
             height: 300px;
             border-radius: 50%;
-            border: 1px solid black;
+            border: 1px solid rgba(0, 0, 0, 0.496);
+            background-color: #3c3c3c;
             position: relative;
         }
-        #hora,#minuto,#segundo{
+        #hora,#minuto,#segundo,#centro{
             position: absolute;
             background-color: #333;
             transform-origin: bottom center;
-            border-radius: 20px;
+            border-radius: 50px;
             border: 1px solid rgba(0, 0, 0, 0.189);
 
         }
         #hora {
-            width: 6px;
-            height: 150px;
-            top: 0px;
-            left: 150px;
+            width: 8px;
+            height: 110px;
+            top: 40px;
+            left: 50%;
+            box-shadow: 0 0 10px black;
+            z-index: 0;
             animation: rotateHour 43200s linear infinite;
         }
 
         #minuto {
-            width: 4px;
+            width: 6px;
             height: 80px;
             top: 70px;
-            left: 150px;
-            animation: rotateMinute 3600s linear infinite;
+            left: 50%;
             background-color: blue;
+            box-shadow: 0 0 10px blue;
+            animation: rotateMinute 3600s linear infinite;
         }
 
         #segundo{
-            width: 2px;
-            height: 90px;
-            top: 60px;
-            left: 150px;
+            width: 4px;
+            height: 100px;
+            top: 50px;
+            left: 50%;
+            box-shadow: 0 0 10px red;
             background-color: red;
             animation: rotateSecond 60s linear infinite;
         }
-
-        #centro {
-            position: absolute;
-            width: 12px;
-            height: 12px;
-            background-color: #333;
-            border-radius: 50%;
+        #centro{
+            width: 20px;
+            height: 20px;
+            left: 142px;
             top: 140px;
-            left: 146px;
-        }
+            box-shadow: 0 0 15px;
 
+        }
+        ul{
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            list-style: none;
+            position: relative;
+            font-size: 1.2em;
+            color: whitesmoke;
+        }
+        li{
+            position: absolute;
+            background-color: rgba(128, 128, 128, 0.395);
+            padding: 5px;
+            border-radius: 50%;
+        }
+        #n12{
+            top: 0;
+            left: 45%;
+        }
+        #n06{
+            bottom: 0;
+            left: 45%;
+        }
+        #n03{
+            top:45%;
+            right: 0;
+        }
+        #n09{
+            left: 0;
+            bottom: 45%;
+        }
+        #n02{
+            right: 16px;
+            top: 75px;
+        }
+        #n01{
+            right: 64px;
+            top: 20px;
+        }
         @keyframes rotateHour {
             from {
                 transform: rotate(0deg);
@@ -98,6 +140,20 @@
 </head>
 <body>
     <div class="relogio">
+        <ul>
+            <li id="n12">12</li>
+            <li id="n01">01</li>
+            <li id="n02">02</li>
+            <li id="n03">03</li>
+            <li id="n04">04</li>
+            <li id="n05">05</li>
+            <li id="n06">06</li>
+            <li id="n07">07</li>
+            <li id="n08">08</li>
+            <li id="n09">09</li>
+            <li id="n10">10</li>
+            <li id="n11">11</li>
+        </ul>
         <div id="hora"></div>
         <div id="minuto"></div>
         <div id="segundo"></div>

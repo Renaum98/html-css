@@ -61,7 +61,7 @@ body{
 #digitos{
     width: 90%;
     height: 400px;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
     border-radius: 10px;
     overflow: hidden;
 
@@ -92,5 +92,13 @@ td:hover{
 td:active{
     background-color: green;
     transition: 0.2s;
+}
+#rodape{
+    font-size: 0.8em;
+    color: rgb(149, 147, 147);
+    padding: 5px;
+    background-color: rgba(0, 128, 0, 0.375);
+    box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.164);
+    border-radius: 10px 10px 0px 0px;
 }
 

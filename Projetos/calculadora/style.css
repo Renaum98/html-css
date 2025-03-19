@@ -90,10 +90,11 @@ td:active{
 }
 #rodape{
     font-size: 0.8em;
-    color: rgb(149, 147, 147);
     padding: 5px;
+    margin-bottom: 10px;
+    color: rgb(149, 147, 147);
     background-color: rgba(0, 128, 0, 0.375);
-    box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.164);
-    border-radius: 10px 10px 0px 0px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.164);
+    border-radius: 10px;
 }
 

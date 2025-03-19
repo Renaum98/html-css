@@ -11,6 +11,7 @@
 body{
     height: 100vh;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
 }
 #container-principal{
     height: 100%;
@@ -43,6 +44,7 @@ body{
     border: 2px solid rgba(40, 209, 40, 0.504);
     background-color: rgba(40, 209, 40, 0.405);
     box-shadow: inset 0 0 10px rgb(12, 62, 12);
+    backdrop-filter: blur(10px);
 
     display: flex;
     justify-content: end;
@@ -54,6 +56,7 @@ body{
     text-align: end;
     font-size: 2.5em;
     margin: 0px 10px;
+    z-index: -1;
 }
 #digitos{
     width: 90%;

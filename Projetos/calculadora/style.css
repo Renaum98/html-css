@@ -22,10 +22,10 @@ body{
     align-items: center;
 }
 #filho-principal{
-    min-width: 300px;
+    min-width: 400px;
     max-width: 500px;
     width: 50%;
-    height: 600px;
+    height: 650px;
     background-color: rgb(18, 18, 18);
     border-radius: 10px;
     border: 2px solid rgba(0, 0, 0, 0.099);
@@ -61,7 +61,7 @@ body{
 #digitos{
     width: 90%;
     height: 400px;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
     border-radius: 10px;
     overflow: hidden;
 

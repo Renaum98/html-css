@@ -1,3 +1,4 @@
+const digito0 = document.getElementById("dg0")
 const digito1 = document.getElementById("dg1")
 const digito2 = document.getElementById("dg2")
 const digito3 = document.getElementById("dg3")
@@ -92,6 +93,7 @@ function calcular() {
 }
 
 // Eventos para os números
+digito0.addEventListener("click", () => inserirNumero('0'));
 digito1.addEventListener("click", () => inserirNumero('1'));
 digito2.addEventListener("click", () => inserirNumero('2'));
 digito3.addEventListener("click", () => inserirNumero('3'));

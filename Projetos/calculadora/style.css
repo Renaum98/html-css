@@ -18,7 +18,7 @@ body{
     align-items: center;
 }
 #filho-principal{
-    min-width: 400px;
+    min-width: 300px;
     max-width: 500px;
     width: 50%;
     height: 600px;

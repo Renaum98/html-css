@@ -1,5 +1,8 @@
 @charset "UTF-8";
-
+@font-face {
+    font-family: 'BitPap';
+    src: url(font/BitPap.ttf);
+}
 *{
     margin: 0px;
     padding: 0px;
@@ -64,7 +67,10 @@ body{
     width: fit-content;
     height: fit-content;
     text-align: end;
-    font-size: 2.5em;
+    font-family: 'BitPap';
+    color: #101010c3;
+    text-shadow: 0 0 10px rgba(40, 209, 40, 0.69);
+    font-size: 3em;
     margin: 0px 10px;
     z-index: -1;
 }
@@ -102,6 +108,7 @@ td:hover{
 td:active{
     background-color: green;
     transition: 0.2s;
+    
 }
 #rodape{
     font-size: 0.8em;
@@ -109,7 +116,6 @@ td:active{
     transform: translateY(24px);
     color: rgb(149, 147, 147);
     background-color: rgba(0, 128, 0, 0.375);
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.164);
     border-radius: 10px;
 }
 

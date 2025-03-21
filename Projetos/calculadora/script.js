@@ -13,6 +13,7 @@ const sub = document.getElementById("sub")
 const soma = document.getElementById("soma")
 const divi = document.getElementById("divi")
 const igual = document.getElementById("igual")
+const porcen = document.getElementById("porcen")
 const telaConteudo = document.getElementById("tela-conteudo")
 
 let valorTela = ''; // Variável para armazenar o valor na tela
@@ -27,6 +28,10 @@ function atualizarTela() {
 // Funções de operação
 function somar(a, b) {
     return a + b;
+}
+
+function porcentagem(a,b) {
+    return (a/100) * b
 }
 
 function subtracao(a, b) {
@@ -82,6 +87,9 @@ function calcular() {
         case '/':
             resultado = divisao(parseFloat(primeiroValor), segundoValor);
             break;
+        case '%':
+            resultado = porcentagem(parseFloat(primeiroValor), segundoValor);
+            break;
         default:
             return;
     }
@@ -109,6 +117,7 @@ soma.addEventListener("click", () => escolherOperador('+'));
 sub.addEventListener("click", () => escolherOperador('-'));
 mult.addEventListener("click", () => escolherOperador('*'));
 divi.addEventListener("click", () => escolherOperador('/'));
+porcen.addEventListener("click", () => escolherOperador('%'));
 
 limpar.addEventListener("click", () => limparTela())
 

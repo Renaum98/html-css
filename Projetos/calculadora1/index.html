@@ -10,14 +10,27 @@
     <main id="container-principal">
         <section>
             <label for="n1_id">Digite o primeiro numero:</label>
-            <input type="text" id="n1_id">
+            <input type="number" id="n1_id" max="100" step="5" min="0">
         </section>
         <section>
             <label for="n2_id">Digite o segundo numero:</label>
-            <input type="text" id="n2_id">
+            <input type="number" id="n2_id" max="100" step="5" min="0">
         </section>
         <section>
-            <label for=""></label>
+            <label for="operador_id">Operador</label>
+            <select name="operador" id="operador_id">
+                <option value="+" title="Soma" selected>+</option>
+                <option value="-" title="Subtração">-</option>
+                <option value="*" title="Multiplicação">*</option>
+                <option value="/" title="Divisão">/</option>
+            </select>
+        </section>
+        <section id="botoes">
+            <button class="botoes" id="botao_calcular">Calcular</button>
+            <button class="botoes" id="botao_limpar">Limpar</button>
+        </section>
+        <section id="container_resultado">
+            <p id="resultado">Digite dois valores para fazer um calculo</p>
         </section>
     </main>
     <script src="app.js"></script>

@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="import" href="component.html">
 </head>
 <body>
+    
     <main id="container-principal">
         <section>
             <label for="n1_id">Digite o primeiro numero:</label>
@@ -17,7 +19,7 @@
             <input type="number" id="n2_id" max="100" step="5" min="0">
         </section>
         <section>
-            <label for="operador_id">Operador</label>
+            <label for="operador_id">Operador:</label>
             <select name="operador" id="operador_id">
                 <option value="+" title="Soma" selected>+</option>
                 <option value="-" title="Subtração">-</option>

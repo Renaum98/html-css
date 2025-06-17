@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid 2</title>
+    <style>
+        .container{
+            border: 1px solid black;
+            padding: 5px;
+            display: grid;
+            grid-auto-rows: 100px;
+            place-items: center center;/*substitu a função de align/justify-items*/
+            place-content: space-around space-around;/*substitu o align/justify-content começando por align e depois justify*/
+            grid-template: 
+            repeat(3,100px)/
+            repeat(3, auto);/*substitui o grid-template-columns/rows começando pelo row(linha/coluna)*/
+
+        }
+        .item{
+            padding: 10px;
+            border: 1px solid green;
+            border-radius: 8px;
+            text-transform: capitalize;
+            font-size: 2rem;
+            font-weight: 600;
+            box-shadow: 3px 3px 0px rgb(9, 92, 2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">a</div>
+        <div class="item">b</div>
+        <div class="item">c</div>
+        <div class="item">d</div>
+        <div class="item">e</div>
+        <div class="item">f</div>
+        <div class="item">g</div>
+        <div class="item">h</div>
+        <div class="item">i</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid 4</title>
+    <style>
+        body{
+            background-color: rgb(228, 228, 228);
+        }
+        .titulo{
+            text-align: center;
+            box-shadow: 
+            3px 3px 2px rgb(114, 114, 114),
+            3px 3px 2px white;
+            padding: 5px;
+        }
+        .container{
+            margin: auto;
+            max-width: 1000px;
+            border: 1px solid;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 100px 100px 100px;
+            grid-template-areas: 
+            "caixa1 caixa1 caixa1 caixa1",
+            "caixa2 caixa2 caixa3 caixa3",
+            "caixa2 caixa2 caixa3 caixa3";
+        }
+        .item {
+            border: 1px solid;
+        }
+        .caixa1{
+            grid-row-start: 1;
+            grid-row-end: 2;
+            grid-column-start: 1;
+            grid-column-end: 5;
+        }
+        .caixa2 {
+            grid-row-start: 2;
+            grid-row-end: 4;
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+        .caixa3{
+            grid-row-start: 2;
+            grid-row-end: 4;
+            grid-column-start: 3;
+            grid-column-end: 5;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="titulo">Propriedades de Item</h1>
+    <div class="container">
+        <div class="item caixa1">S</div>
+        <div class="item caixa2">U</div>
+        <div class="item caixa3">C</div>
+    </div>
+</body>
+</html>

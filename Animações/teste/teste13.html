@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box
+        }
+        body, html{
+            position: relative;
+            background-color: #131313;
+            width: 100%;
+            height: 100%;
+        }
+        .menucircular{
+            display: none;
+        }
+        .linha{
+            background-color: white;
+            width: 25px;
+            height: 3px;
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transition: all .5s ease-in-out;
+            transition: all .5s ease-in-out;
+            margin-left: -12px;
+            margin-top: -1px;
+        }
+        .linha-1{
+            -webkit-transform: translate3d(0, -8px, 0);
+            transform:translate3d(0, -8px, 0);
+        }
+        .linha-2{
+            -webkit-transform: translate3d(0, 0, 0);
+            transform:translate3d(0, 0, 0);
+        }
+        .linha-3{
+            -webkit-transform: translate3d(0, 8px, 0);
+            transform:translate3d(0, 8px, 0);
+        }
+        .menucircular:checked + .menu-btn .linha-1{
+            -webkit-transform: translate3d(0, 0, 0) rotate(45deg);
+            transform: translate3d(0, 0, 0) rotate(45deg);
+        }
+        .menucircular:checked + .menu-btn .linha-2{
+            -webkit-transform: translate3d(0, 0, 0) scale(0.1, 1);
+            transform: translate3d(0, 0, 0) scale(0.1, 1);
+        }
+        .menucircular:checked + .menu-btn .linha-3{
+            -webkit-transform: translate3d(0, 0, 0) rotate(-45deg);
+            transform: translate3d(0, 0, 0) rotate(-45deg);
+        }
+        .menu{
+            width: 70px;
+            height: 70px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            font-size: 30px;
+        }
+        .menu-btn, .menu-a{
+            color: #ffff;
+            width: 70px;
+            height: 70px;
+            background-color: darkred;
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid #282828;
+            text-align: center;
+            -webkit-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+            -webkit-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+        }
+        .menu-btn{
+            z-index: 2;
+            cursor: pointer;
+            -webkit-transform: scale(1.1, 1.1) translate3d(0,0,0);
+            transform: scale(1.1, 1.1) translate3d(0,0,0);
+            -webkit-transition-timing-function: cubic-bezier(.2,.9,.35,1.35);
+            transition-timing-function: cubic-bezier(.2,.9,.35,1.35);
+        }
+        .menucircular:checked ~ .menu-a:nth-child(3){
+            -webkit-transition-duration: .3s;
+            transition-duration: .3s;
+            -webkit-transform: translate3d(0.1px, -100px, 0);
+            transform: translate3d(0.1px, -100px, 0);
+        }
+        .menucircular:checked ~ .menu-a:nth-child(4){
+            -webkit-transition-duration: .35s;
+            transition-duration: .35s;
+            -webkit-transform: translate3d(90px, -50px, 0);
+            transform: translate3d(90px, -50px, 0);
+        }
+        .menucircular:checked ~ .menu-a:nth-child(5){
+            -webkit-transition-duration: .35s;
+            transition-duration: .35s;
+            -webkit-transform: translate3d(90px, 50px, 0);
+            transform: translate3d(90px, 50px, 0);
+        }
+        .menucircular:checked ~ .menu-a:nth-child(6){
+            -webkit-transition-duration: .4s;
+            transition-duration: .4s;
+            -webkit-transform: translate3d(0.1px, 100px, 0);
+            transform: translate3d(0.1px, 100px, 0);
+        }
+        .menucircular:checked ~ .menu-a:nth-child(7){
+            -webkit-transition-duration: .35s;
+            transition-duration: .35s;
+            -webkit-transform: translate3d(-90px, 50px, 0);
+            transform: translate3d(-90px, 50px, 0);
+        }
+        .menucircular:checked ~ .menu-a:nth-child(8){
+            -webkit-transition-duration: .35s;
+            transition-duration: .35s;
+            -webkit-transform: translate3d(-90px, -50px, 0);
+            transform: translate3d(-90px, -50px, 0);
+        }
+        .menucircular:checked + .menu-btn{
+            -webkit-transition: all .5s linear;
+            transition: all .5s linear; 
+            -webkit-transform: translate3d(0,0,0) scale(0.9, 0.9);
+            transform: translate3d(0,0,0) scale(0.9, 0.9);
+        }
+        .menucircular:checked ~.menu-a{
+            transition-timing-function: cubic-bezier(.27,.68,.53,.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="menu">
+            <input type="checkbox" name="menucircular" id="menucircular" class="menucircular">
+            <label for="menucircular" class="menu-btn">
+                <span class="linha linha-1"></span>
+                <span class="linha linha-2"></span>
+                <span class="linha linha-3"></span>
+            </label>
+            <a href="#" class="menu-a ai-1">
+                <i class="fab fa-home"></i>
+            </a>
+            <a href="#" class="menu-a ai-2">
+                <i class="fab fa-html5"></i>
+            </a>
+            <a href="#" class="menu-a ai-3">
+                <i class="fab fa-css"></i>
+            </a>
+            <a href="#" class="menu-a ai-3">
+                <i class="fab fa-css"></i>
+            </a>
+            <a href="#" class="menu-a ai-4">
+                <i class="fab fa-js-square"></i>
+            </a>
+            <a href="#" class="menu-a ai-5">
+                <i class="fab fa-python"></i>
+            </a>
+            <a href="#" class="menu-a ai-6">
+                <i class="fab fa-java"></i>
+            </a>
+        </nav>
+    </div>
+</body>
+</html>

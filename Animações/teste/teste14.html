@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #272727;
+        }
+        .carousel{
+            margin: 10px auto;
+            width: 80%;
+            overflow-x: auto;
+            display: flex;
+            gap: 1em;
+            scroll-behavior: smooth;
+            anchor-name: --carousel;
+            scroll-snap-type: x mandatory;
+            scroll-marker-group:after;
+        }
+
+        .carousel::scroll-marker-group{
+            display: flex;
+            justify-content: center;
+            gap: .5em;
+        }
+
+        .card::scroll-marker{
+            content: '';
+            height: 1em;
+            width: 1em;
+            background-color: rgb(20, 20, 20);
+            border-radius: 50%;
+            &:target-current{
+                transform:scale(1.1);
+            }
+        }
+
+        .card::scroll-marker:target-current{
+            background-color: darkred;
+        }
+
+        .carousel::-webkit-scrollbar{
+            display: none;
+        }
+
+        .carousel::scroll-button(right),
+        .carousel::scroll-button(left){
+            content: '>';
+            border: none;
+            width: 50px;
+            height: 50px;
+            background-color: darkred;
+            box-shadow: inset -2px -2px 2px rgba(0, 0, 0, 0.123),inset 2px 2px 2px rgba(255, 255, 255, 0.116);
+            color: white;
+            padding: 1rem;
+            font-size: 2rem;
+            border-radius: 50%;
+            cursor: pointer;
+            position: fixed;
+            position-anchor: --carousel;
+            position-area: right center;
+            translate: -50%;
+        }
+
+        .carousel::scroll-button(left){
+            content: '<';
+            position-area: left center;
+            translate: 50%;
+        }
+
+        .card {
+            scroll-snap-align: start;
+            flex: 0 0 20em;
+            height: 12em;
+            background-image: linear-gradient(to bottom, rgb(102, 0, 128),rgb(194, 1, 75));
+            padding: 1em;
+            border-radius: .5em;
+            text-align: center;
+            align-content: center;
+        }
+        @media(max-width:500px){
+            .card{
+                flex: 0 0 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel">
+        <div class="card">Card 1</div>
+        <div class="card">Card 2</div>
+        <div class="card">Card 3</div>
+        <div class="card">Card 4</div>
+        <div class="card">Card 5</div>
+        <div class="card">Card 6</div>
+        <div class="card">Card 7</div>
+        <div class="card">Card 8</div>
+        <div class="card">Card 9</div>
+        <div class="card">Card 10</div>
+        <div class="card">Card 11</div>
+        <div class="card">Card 12</div>
+    </div>
+</body>
+</html>

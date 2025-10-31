@@ -47,7 +47,8 @@ h1 {
     height: 150px;
     text-align: center;
     color: white;
-    display: block;  
+    display: block; 
+    align-content: center; 
 }
 
 /*css flexbox 1*/

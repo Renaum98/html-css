@@ -35,7 +35,7 @@
             animation-name: spin; /*o nome da animação que foi definido no @keyframes*/
             animation-timing-function: ease-in-out; /*se quer uma animação mais fluida(ease-in-out) ou linear */
             animation-delay: 0s; /*tempo de atraso para animação começãr assim que a pagina carregar*/
-            animation-iteration-count: 1; /*numero de vezes que a animação vai acontecer podendo criar tambem um loop com o infinite*/
+            animation-iteration-count: infinite; /*numero de vezes que a animação vai acontecer podendo criar tambem um loop com o infinite*/
             animation-direction: normal; /*duração da animação podendo ser reversa*/
             animation-fill-mode: forwards; /*define onde a animação vai parar assim que ele terminar, se vai voltar como era antes ou manter oque aconteceu depois da animação*/
             animation-play-state: paused; /*define como se iniciara a animação podendo tambem usar um hover para so iniciar assim que o mouse passar por cima*/
@@ -92,11 +92,11 @@
         let playButton = document.getElementById('play');
         let pauseButton = document.getElementById('pause');
 
-        playButton.addEventListener('click', () => {
+        pauseButton.addEventListener('mouseleave', () => {
             filho.style.animationPlayState = 'running';
         });
 
-        pauseButton.addEventListener('click', () => {
+        pauseButton.addEventListener('mouseenter', () => {
             filho.style.animationPlayState = 'paused';
         });
     </script>

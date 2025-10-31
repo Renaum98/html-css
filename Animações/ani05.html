@@ -18,6 +18,7 @@
             min-height: 100vh;   
             background: #252839;    
         }
+
         h2{
             position: relative;
             font-size:14vw;
@@ -25,6 +26,7 @@
             -webkit-text-stroke: 0.3vw #383d52;
             text-transform: uppercase;
         }
+
         h2::before{
             content: attr(data-text);
             position: absolute;
@@ -35,8 +37,9 @@
             -webkit-text-stroke: 0vw #383d52;
             border-right: 2px solid #01fe87;
             overflow: hidden;
-            animation: animate 5s linear infinite;
+            animation: animate 4s linear infinite;
         }
+
         @keyframes animate {
             0%,10%,100%{
                 width: 0%;

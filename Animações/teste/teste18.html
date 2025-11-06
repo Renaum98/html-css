@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(212, 211, 211);
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            display: flex;
+            margin: 0;
+            padding: 0;
+            gap: 3rem;
+        }
+        li{
+            list-style: none;
+            margin: 0 5px;
+            font-size: 20px;
+            background-color: white;
+            padding: 1rem;
+            transform: rotate(-30deg) skewY(25deg);
+            box-shadow: -20px 20px 10px rgba(0,0,0,0.5);
+            position: relative;
+            &::before{
+                content: "";
+                position: absolute;
+                top: 10px;
+                left: -20px;
+                height: 100%;
+                width: 20px;
+                background: #b1b1b1;
+                transform: rotate(0deg) skewY(-45deg);
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                bottom: -20px;
+                left: -10px;
+                height: 20px;
+                width: 100%;
+                background: #b1b1b1;
+                transform: rotate(0) skewx(-45deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>Inicio</li>
+        <li>Fotos</li>
+        <li>Sobre</li>
+        <li>Sair</li>
+        <li>Menu</li>
+    </ul>
+</body>
+</html>

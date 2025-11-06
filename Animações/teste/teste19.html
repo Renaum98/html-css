@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            background-color: #272727;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @property --angle{
+            syntax: "<angle>";
+            initial-value: 0deg;
+            inherits: false;
+        }
+        .caixa{
+            width: 300px;
+            height: 300px;
+            background-color: #272727;
+            position: relative;
+            border-radius: 10px;
+            color: white;
+            padding: 1rem;
+            font-weight: 100;
+            text-align: justify;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            &::after, &::before{
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 50%;
+                left: 50%;
+                transform:translate(-50%, -50%);
+                background-image: conic-gradient(from var(--angle), transparent 70%, rgb(255, 0, 0));
+                z-index: -1;
+                padding: 3px;
+                border-radius: 10px;
+                animation: spin 5s linear infinite;
+            }
+            &::before{
+                filter: blur(5rem);
+                opacity: 0.5;
+            }
+        }
+        @keyframes spin {
+            from{
+                --angle:0deg;
+            }
+            to{
+                --angle:360deg;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="caixa">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero perferendis, quasi hic delectus perspiciatis distinctio laudantium dicta maiores a molestiae fugit veniam, totam dignissimos sit tempora? Consectetur adipisci vero repellat! Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem voluptate suscipit architecto ad expedita eos porro consectetur vel beatae? Atque autem asperiores excepturi laborum inventore veritatis voluptatum quaerat, tempora impedit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure tenetur deleniti eveniet voluptatibus.</div>
+</body>
+</html>

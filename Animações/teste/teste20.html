@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            min-height: 100vh;
+            min-height: 100dvh;
+            padding: 1em;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            align-items: start;
+            justify-content: start;
+        }
+        button{
+            background: rgb(102, 102, 250);
+            padding: .7em 1.5em;
+            border: none;
+            border-radius: 0.3em;
+            font: inherit;
+            font-weight: 500;
+            color: white;
+            cursor: pointer;
+            anchor-name: --menu-button;
+        }
+        #menu{
+            width: max-content;
+            border: 1px solid #ccc;
+            border-radius: .5em;
+            padding: .5rem;
+            background-color: white;
+            position: absolute;
+            position-anchor: menu-button;
+            top: anchor(bottom);
+
+            &:popover-open {
+                display: grid;
+            }
+            &>a{
+                text-decoration: none;
+                padding: .7em 1.5em;
+                border-radius: .25em;
+                color: black;
+                &:hover{
+                    background-color: #eee;
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+    <button popovertarget="menu">Menu</button>
+    <div id="menu" popover>
+        <a href="#">item 1</a>
+        <a href="#">item 2</a>
+        <a href="#">item 3</a>
+    </div>
+</body>
+</html>

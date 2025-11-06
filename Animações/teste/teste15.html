@@ -12,6 +12,12 @@
             display: flex;
             overflow-x: auto;
             position: relative;
+            &::after{
+                content: "";
+                position: absolute;
+                width: 10px;
+
+            }
         }
         .carousel::-webkit-scrollbar{
             display: none;
@@ -29,8 +35,8 @@
             animation: spin 20s infinite linear reverse;
         }
         .card {
-            flex: 0 0 5em;
-            height: 5em;
+            flex: 0 0 3em;
+            height: 1em;
             padding: 1em;
             background: #272727;
             color: white;

@@ -11,6 +11,17 @@
             width: 90%;
             display: flex;
             overflow-x: auto;
+            position: relative;
+            &::after{
+                content: "";
+                position: absolute;
+                background-color: rgb(14, 14, 14);
+                filter: blur(10px);
+                height: 100%;
+                width: 20px;
+                top: 0;
+                left: 0;
+            }
         }
         .carousel::-webkit-scrollbar{
             display: none;

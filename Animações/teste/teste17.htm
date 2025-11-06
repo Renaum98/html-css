@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: #272727;
+    }
+    #caixa {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 1rem;
+      background-color: white;
+      width: 50px;
+      height: 20px;
+      padding: .5rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      box-shadow: inset -5px -2px 2px rgba(0, 0, 0, 0.267), inset 5px 2px 2px rgba(255, 255, 255, 0.226);
+    }
+    #seletor {
+      height: 100%;
+      width: 50%;
+      background-color: darkblue;
+      border-radius: 1rem;
+      cursor: pointer;
+      transition: transform .6s ease;
+      box-shadow: inset -5px -5px 2px rgba(0, 0, 0, 0.267), inset 5px 5px 2px rgba(255, 255, 255, 0.226);
+    }
+  </style>
+</head>
+<body>
+  <div id="caixa">
+    <div id="seletor"></div>
+  </div>
+
+  <script>
+    const caixa = document.getElementById("caixa");
+    const seletor = document.getElementById("seletor");
+    let ativo = false;
+
+    caixa.addEventListener("click", () => {
+      ativo = !ativo;
+      
+      if (seletor.style.transform = ativo) {
+        seletor.style.transform = "translateX(100%)"
+        seletor.style.backgroundColor = "white"
+        caixa.style.backgroundColor = "darkblue"
+      } else {
+        seletor.style.transform = "translateX(0)"
+        seletor.style.backgroundColor = "darkblue"
+        caixa.style.backgroundColor = "white"
+      }
+    });
+  </script>
+</body>
+</html>

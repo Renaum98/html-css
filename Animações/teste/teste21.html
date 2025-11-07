@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: white;
+            height: 2000px;
+
+            &::-webkit-scrollbar{
+                display: none;
+            }
+        }
+        .container_glass{
+            background-image: url(teste9/img1.jpg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            background-attachment: fixed;
+            height: 800px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 0;
+            animation: fade linear both;
+            animation-timeline: view();
+            animation-range: cover 50% exit 100%;
+
+            @media(max-width:641px){
+                height: 600px;
+            }
+        }
+        @keyframes fade {
+            from{
+                background-size: 150%;
+            }
+            to{
+                background-size: 80%;   
+            }
+        }
+        .container_lista{
+            display: flex;
+            gap: 1rem;
+            padding: 1rem 0;
+            list-style: none;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 80%;
+            position: relative;
+            position: sticky;
+            top: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.185);
+            transition: .6s;
+            &::after{
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                backdrop-filter: blur(5px);
+                -webkit-backdrop-filter: blur(5px);
+                filter: url(#liquidglass);
+                -webkit-filter: url(#liquidglass);
+                border-radius: 10px;
+            }
+            &::before{
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                inset: 0;
+                border-radius: 10px;
+                z-index: 10;
+                box-shadow: 
+                    inset 1px 1px 0 rgba(255, 255, 255, 0.2),
+                    inset 0 0 5px rgba(255, 255, 255, 0.2);
+            }
+            @media(max-width:641px){
+                flex-direction: column;
+                width: 50%;
+            }
+            
+        }
+        h1{
+            font-size:2rem;
+            color: black;
+            text-align: center;
+            margin: 1rem 0;
+        }
+        section{
+            margin: auto;
+            width: 80%;
+        }
+        section>p{
+            color: black;
+            text-align: justify;
+            text-indent: 1rem;
+        }
+        .container_item{
+            font-size: 2rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: .3s;
+            z-index: 10;
+            &:hover{
+                scale: 1.1;
+            }
+        }
+    </style>
+</head>
+    <body>
+        <div class="container_glass">
+            <ul class="container_lista">
+                <li class="container_item">Inicio</li>
+                <li class="container_item">Fotos</li>
+                <li class="container_item">Sobre</li>
+                <li class="container_item">Sair</li>
+            </ul>
+        </div>
+        <h1>Orestaurante</h1>
+        <section>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit amet ducimus exercitationem hic dolorum corrupti dicta ex esse saepe at nulla atque qui, architecto natus eos! Consequuntur mollitia et quam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad quibusdam, necessitatibus nulla sequi nam, voluptas quia vitae optio distinctio iste consequatur hic ipsa iusto quae eligendi officiis quasi rerum est.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident officiis, maxime nihil tenetur odit, explicabo sint accusantium sit facilis a dolore. Suscipit omnis voluptates eveniet dicta reprehenderit a exercitationem voluptatibus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quasi itaque, nisi ipsam consectetur explicabo ex quaerat blanditiis culpa officiis obcaecati dicta tenetur accusantium dignissimos quisquam quia illum, error veniam? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis, nesciunt iste et cumque tempore commodi cum quod architecto molestiae, aperiam sint unde beatae delectus tenetur iusto rerum eos maiores similique?</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos laudantium quam, tenetur laboriosam ab exercitationem quis nam non quaerat ullam quas inventore ad perferendis optio. Fugiat voluptas culpa eius officia! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi inventore nisi fugit voluptas tempora quas perspiciatis porro, atque, sed similique quae tempore reprehenderit nam quisquam. Necessitatibus inventore provident minima reiciendis. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id sit qui impedit similique eius ad nulla consectetur recusandae reiciendis itaque ipsam magni, ab voluptatem iusto reprehenderit aliquid officia. Mollitia, ad? Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, quas tempore reprehenderit eaque sit, libero porro consectetur saepe, ad nemo rerum aspernatur labore vitae quidem necessitatibus culpa ducimus maxime repellat. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus dolorem, provident recusandae eos doloribus adipisci porro repellendus neque nam, quia fugiat quas consectetur. Hic natus quia cum, perferendis expedita asperiores.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit temporibus atque quia maiores perspiciatis pariatur mollitia sunt obcaecati minus aliquid delectus quidem nihil necessitatibus ipsam, expedita dolores placeat sint nisi?</p>
+        </section>
+        <svg style="display: none">
+            <filter id="liquidglass" x="-50%" y="-60%" width="200%" height="200%">
+                <feImage x="0" y="0" result="imagemSVG" xlink:href="data:image/svg+xml;utf8,
+                    <svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'>
+                        <radialGradient id='mapaGradiente' cx='50%' cy='50%' r='50%'>
+                            <stop offset='0%' stop-color='rgb(128,128,255)'/>
+                            <stop offset='100%' stop-color='rgb(255,255,255)'/>
+                        </radialGradient>
+                    </svg>" />
+                <feDisplacementMap in="SourceGraphic" in2="imagemSVG" scale="-60" 
+                    xChannelSelector="R" yChannelSelector="G" result="imagemDistorcida" />
+                <feMerge>
+                    <feMergeNode in="imagemDistorcida"/>
+                </feMerge>
+            </filter>
+        </svg>
+    </body>
+</html>

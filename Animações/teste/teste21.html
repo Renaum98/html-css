@@ -40,7 +40,7 @@
         }
         @keyframes fade {
             from{
-                background-size: 150%;
+                background-size: 100%;
             }
             to{
                 background-size: 80%;   
@@ -145,7 +145,7 @@
                             <stop offset='100%' stop-color='rgb(255,255,255)'/>
                         </radialGradient>
                     </svg>" />
-                <feDisplacementMap in="SourceGraphic" in2="imagemSVG" scale="-60" 
+                <feDisplacementMap in="SourceGraphic" in2="imagemSVG" scale="-20" 
                     xChannelSelector="R" yChannelSelector="G" result="imagemDistorcida" />
                 <feMerge>
                     <feMergeNode in="imagemDistorcida"/>

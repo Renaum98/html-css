@@ -30,8 +30,8 @@ function somar(a, b) {
     return a + b;
 }
 
-function porcentagem(a,b) {
-    return (a/100) * b
+function porcentagem(a, b) {
+    return (a / 100) * b
 }
 
 function subtracao(a, b) {

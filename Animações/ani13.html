@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animação 13 - Loading</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+      }
+      .caixa-container {
+        width: 100%;
+        height: 100%;
+        background-color: #272727;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .caixa-itens {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .caixa-loading-1 {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        animation: rotacao 2s infinite linear;
+        transition: transform 1s;
+        box-shadow: 
+        inset 0px 5px 10px rgb(128, 128, 255),
+        inset 0px 5px 20px rgb(128, 128, 255),
+        inset 0px 5px 5px rgb(128, 128, 255),
+          inset 0px -5px 10px rgb(6, 6, 163), inset 0px -5px 20px rgb(6, 6, 163),
+          inset 0px -5px 25px rgb(6, 6, 163), 0px 0px 10px rgba(0, 0, 0, 0.568);
+        @media (max-width: 768px) {
+          transform: scale(0.7);
+        }
+      }
+      .caixa-loading-2 {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        animation: rotacao 2s infinite linear;
+        border: 5px solid rgba(71, 71, 71, 0);
+        filter: blur(5px);
+        position: relative;
+        overflow: hidden;
+        &::after {
+          content: "";
+          position: absolute;
+          width: 60px;
+          height: 10px;
+          background-color: aqua;
+          filter: blur(5px);
+          box-shadow: 0px 0px 10px rgb(255, 0, 0), 0px 0px 20px rgb(255, 0, 0),
+            0px 0px 30px rgb(255, 0, 0);
+          top: -5px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+
+      .caixa-loading-3{
+        width: 100px;
+        height: 100px;
+        border: 10px solid transparent;
+        border-radius: 50%;
+        border-top: 10px dotted rgb(3, 224, 3);
+        border-bottom: 10px dotted rgb(3, 224, 3);
+        animation: rotacao 2s infinite linear;
+        filter: drop-shadow(1px 0 10px rgb(2, 253, 2)) blur(1px);
+      }
+      @keyframes rotacao {
+        from {
+          rotate: 0deg;
+        }
+        to {
+          rotate: 360deg;
+        }
+      }
+      p {
+        font-size: 5rem;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+        color: rgb(168, 168, 168);
+        font-weight: 700;
+        transition: all 1s;
+        @media (max-width: 768px) {
+          font-size: 3rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="caixa-container">
+      <div class="caixa-itens">
+        <div class="caixa-loading-1"></div>
+        <div class="caixa-loading-2"></div>
+        <div class="caixa-loading-3"></div>
+      </div>
+      <p>Carregando...</p>
+    </div>
+  </body>
+</html>

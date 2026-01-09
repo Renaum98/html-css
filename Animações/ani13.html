@@ -35,10 +35,9 @@
         border-radius: 50%;
         animation: rotacao 2s infinite linear;
         transition: transform 1s;
-        box-shadow: 
-        inset 0px 5px 10px rgb(128, 128, 255),
-        inset 0px 5px 20px rgb(128, 128, 255),
-        inset 0px 5px 5px rgb(128, 128, 255),
+        box-shadow: inset 0px 5px 10px rgb(128, 128, 255),
+          inset 0px 5px 20px rgb(128, 128, 255),
+          inset 0px 5px 5px rgb(128, 128, 255),
           inset 0px -5px 10px rgb(6, 6, 163), inset 0px -5px 20px rgb(6, 6, 163),
           inset 0px -5px 25px rgb(6, 6, 163), 0px 0px 10px rgba(0, 0, 0, 0.568);
         @media (max-width: 768px) {
@@ -54,6 +53,7 @@
         filter: blur(5px);
         position: relative;
         overflow: hidden;
+        transition: transform 1s;
         &::after {
           content: "";
           position: absolute;
@@ -67,9 +67,12 @@
           left: 50%;
           transform: translateX(-50%);
         }
+        @media (max-width: 768px) {
+          transform: scale(0.7);
+        }
       }
 
-      .caixa-loading-3{
+      .caixa-loading-3 {
         width: 100px;
         height: 100px;
         border: 10px solid transparent;
@@ -78,7 +81,30 @@
         border-bottom: 10px dotted rgb(3, 224, 3);
         animation: rotacao 2s infinite linear;
         filter: drop-shadow(1px 0 10px rgb(2, 253, 2)) blur(1px);
+        transition: transform 1s;
+        @media (max-width: 768px) {
+          transform: scale(0.7);
+        }
       }
+
+      .caixa-loading-4 {
+        width: 100px;
+        height: 100px;
+        border: 10px solid rgba(128, 128, 128, 0.096);
+        border-radius: 50%;
+        position: relative;
+      }
+
+      .caixa-loading-4::after {
+        content: "";
+        position: absolute;
+        inset: -15px; /* alinha com a borda */
+        border: 20px solid transparent;
+        border-top-color: red; /* parte curva */
+        border-radius: 50%;
+        animation: rotacao 2s infinite linear;
+      }
+
       @keyframes rotacao {
         from {
           rotate: 0deg;
@@ -108,6 +134,7 @@
         <div class="caixa-loading-1"></div>
         <div class="caixa-loading-2"></div>
         <div class="caixa-loading-3"></div>
+        <div class="caixa-loading-4"></div>
       </div>
       <p>Carregando...</p>
     </div>

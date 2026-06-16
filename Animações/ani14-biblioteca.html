@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roleta Infinita com Swiper</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background-color: #202020;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    /* O container do Swiper substitui a nossa antiga classe .caixa */
+    .swiper {
+        width: 400px;
+        height: 400px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        padding: 20px 10px;
+    }
+
+    /* Estilo do item interno (onde a mágica da esquerda acontece) */
+    .filho {
+        font-size: 1.8rem;
+        color: rgb(130, 252, 126);
+        padding: 12px;
+        background-color: rgb(40, 40, 179);
+        text-align: center;
+        border-radius: 6px;
+        width: 100%;
+
+        /* Transição suave quando o usuário arrasta */
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        will-change: transform, opacity;
+    }
+</style>
+
+<body>
+
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="filho">Item 1</div>
+            </div>
+            <div class="swiper-slide">
+                <div class="filho">Item 2</div>
+            </div>
+            <div class="swiper-slide">
+                <div class="filho">Item 3</div>
+            </div>
+            <div class="swiper-slide">
+                <div class="filho">Item 4</div>
+            </div>
+            <div class="swiper-slide">
+                <div class="filho">Item 5</div>
+            </div>
+            <div class="swiper-slide">
+                <div class="filho">Item 6</div>
+            </div>
+            <div class="swiper-slide">
+                <div class="filho">Item 7</div>
+            </div>
+            <div class="swiper-slide">
+                <div class="filho">Item 8</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        const swiper = new Swiper('.swiper', {
+            direction: 'vertical',         // Rolagem vertical
+            loop: true,                    // Loop infinito automático!
+            slidesPerView: 4,              // Quantos itens aparecem por vez
+            centeredSlides: true,          // O item ativo fica no centro
+            mousewheel: true,              // Permite usar a rodinha do mouse
+            grabCursor: true,              // Mostra a mãozinha de arrastar
+            watchSlidesProgress: true,     // Ativa o cálculo de posição de cada slide
+
+            // Eventos para recriar o seu efeito CSS de forma dinâmica
+            on: {
+                progress: function (s) {
+                    s.slides.forEach(slide => {
+                        // O 'progress' diz quão longe o item está do centro (0 = centro, 1 ou -1 = extremidades)
+                        const progress = slide.progress;
+                        const absProgress = Math.min(Math.abs(progress), 1.5);
+
+                        // Encontra o elemento interno .filho
+                        const filho = slide.querySelector('.filho');
+
+                        if (filho) {
+                            // Quanto mais longe do centro, mais para a esquerda (-X) ele vai
+                            const translateX = -absProgress * 100;
+                            // Quanto mais longe do centro, mais transparente
+                            const opacity = 1 - (absProgress * 0.7);
+
+                            filho.style.transform = `translateX(${translateX}px)`;
+                            filho.style.opacity = opacity;
+                        }
+                    });
+                },
+                setTransition: function (s, speed) {
+                    s.slides.forEach(slide => {
+                        const filho = slide.querySelector('.filho');
+                        if (filho) {
+                            // Sincroniza a velocidade da animação com o arrasto do mouse
+                            filho.style.transitionDuration = `${speed}ms`;
+                        }
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

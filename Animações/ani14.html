@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roleta Infinita</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background-color: #202020;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    .caixa {
+        width: 400px;
+        height: 400px;
+        /* Reduzimos o padding porque os próprios clones agora preenchem o espaço */
+        padding: 40px 10px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .caixa::-webkit-scrollbar {
+        display: none;
+    }
+
+    .filho {
+        font-size: 1.8rem;
+        color: rgb(130, 252, 126);
+        padding: 12px;
+        background-color: rgb(40, 40, 179);
+        text-align: center;
+        border-radius: 6px;
+        min-height: 60px;
+        /* Altura fixa ajuda no cálculo do teleporte */
+
+        will-change: transform, opacity;
+        animation: moverEsquerda linear both;
+        animation-timeline: view();
+        animation-range: entry 0% exit 100%;
+    }
+
+    @keyframes moverEsquerda {
+        0% {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+
+        40%,
+        60% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        100% {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+    }
+</style>
+
+<body>
+    <div class="caixa" id="roleta">
+        <div class="filho">Inicio</div>
+        <div class="filho">Sobre Nós</div>
+        <div class="filho">Fotos</div>
+        <div class="filho">Sair</div>
+    </div>
+
+    <script>
+        const roleta = document.getElementById('roleta');
+        const itensOriginais = Array.from(roleta.children);
+
+        // Quantidade de itens para clonar (o suficiente para encher a visão do container)
+        const quantidadeClones = 4;
+
+        // 1. Clonar os primeiros itens e jogar pro FINAL da lista
+        for (let i = 0; i < quantidadeClones; i++) {
+            const cloneFim = itensOriginais[i].cloneNode(true);
+            roleta.appendChild(cloneFim);
+        }
+
+        // 2. Clonar os últimos itens e jogar pro INÍCIO da lista
+        for (let i = itensOriginais.length - 1; i >= itensOriginais.length - quantidadeClones; i--) {
+            const cloneInicio = itensOriginais[i].cloneNode(true);
+            roleta.insertBefore(cloneInicio, roleta.firstChild);
+        }
+
+        // 3. Definir a posição inicial do Scroll no meio (nos itens reais)
+        // Calculamos a altura de um item + o gap do CSS (60px altura + 30px gap = 90px por item)
+        const tamanhoItemComGap = itensOriginais[0].offsetHeight + 30;
+        const pontoInicial = quantidadeClones * tamanhoItemComGap;
+
+        // Inicializa o scroll no lugar certo
+        roleta.scrollTop = pontoInicial;
+
+        // 4. A Mágica do Teleporte do Scroll
+        roleta.addEventListener('scroll', () => {
+            const scrollAtual = roleta.scrollTop;
+            const alturaTotalConteudo = roleta.scrollHeight;
+            const alturaContainer = roleta.clientHeight;
+
+            // Se o usuário subir demais e chegar perto do topo dos clones superiores
+            if (scrollAtual <= 10) {
+                // Desativa o comportamento suave temporariamente para o teleporte ser invisível
+                roleta.style.scrollBehavior = 'auto';
+                // Teleporta para o equivalente real lá embaixo
+                roleta.scrollTop = alturaTotalConteudo - (alturaContainer + pontoInicial);
+                roleta.style.scrollBehavior = 'smooth';
+            }
+            // Se o usuário descer demais e chegar perto do fundo dos clones inferiores
+            else if (scrollAtual + alturaContainer >= alturaTotalConteudo - 10) {
+                roleta.style.scrollBehavior = 'auto';
+                // Teleporta de volta para o topo real
+                roleta.scrollTop = pontoInicial;
+                roleta.style.scrollBehavior = 'smooth';
+            }
+        });
+    </script>
+</body>
+
+</html>

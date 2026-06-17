@@ -25,11 +25,12 @@
 
     /* O container do Swiper substitui a nossa antiga classe .caixa */
     .swiper {
-        width: 400px;
-        height: 400px;
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        width: 300px;
+        height: 300px;
+        border: 1px solid rgba(128, 128, 128, 0.253);
         border-radius: 8px;
         padding: 20px 10px;
+
     }
 
     /* Estilo do item interno (onde a mágica da esquerda acontece) */
@@ -39,7 +40,7 @@
         padding: 12px;
         background-color: rgb(40, 40, 179);
         text-align: center;
-        border-radius: 6px;
+        border-radius: 15px;
         width: 100%;
 
         /* Transição suave quando o usuário arrasta */
@@ -85,7 +86,7 @@
         const swiper = new Swiper('.swiper', {
             direction: 'vertical',         // Rolagem vertical
             loop: true,                    // Loop infinito automático!
-            slidesPerView: 4,              // Quantos itens aparecem por vez
+            slidesPerView: 3,              // Quantos itens aparecem por vez
             centeredSlides: true,          // O item ativo fica no centro
             mousewheel: true,              // Permite usar a rodinha do mouse
             grabCursor: true,              // Mostra a mãozinha de arrastar

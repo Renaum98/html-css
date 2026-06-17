@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>App</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    display: flex;
+    height: 100vh;
+    background: #F5F5F5;
+    color: #1a1a1a;
+  }
+
+  #sidebar {
+    width: 220px;
+    min-width: 220px;
+    background: #FFC904;
+    display: flex;
+    flex-direction: column;
+    padding: 28px 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 100;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.10);
+  }
+
+  .sidebar-logo {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #000;
+    letter-spacing: -0.5px;
+    padding: 0 24px 28px;
+    border-bottom: 1.5px solid rgba(0,0,0,0.10);
+    margin-bottom: 16px;
+  }
+
+  .btn-add {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0 16px 20px;
+    padding: 11px 16px;
+    background: #000;
+    color: #FFC904;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.15s, transform 0.1s;
+    letter-spacing: 0.01em;
+  }
+
+  .btn-add:hover { opacity: 0.85; transform: translateY(-1px); }
+  .btn-add:active { transform: translateY(0); }
+
+  .btn-add svg { flex-shrink: 0; }
+
+  nav { flex: 1; display: flex; flex-direction: column; gap: 2px; padding: 0 10px; }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 11px 14px;
+    color: #000;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    width: 100%;
+    text-align: left;
+    transition: background 0.15s;
+  }
+
+  .nav-item:hover { background: rgba(0,0,0,0.08); }
+
+  .nav-item.active {
+    background: rgba(0,0,0,0.13);
+    font-weight: 700;
+  }
+
+  #main {
+    margin-left: 220px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  #topbar {
+    height: 56px;
+    background: #fff;
+    border-bottom: 1px solid #e8e8e8;
+    display: flex;
+    align-items: center;
+    padding: 0 32px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #111;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+
+  #content {
+    flex: 1;
+    padding: 36px 32px;
+  }
+
+  .page { display: none; animation: fadeIn 0.18s ease; }
+  .page.active { display: block; }
+
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+  .page-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 8px;
+  }
+
+  .page-subtitle {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 32px;
+  }
+
+  .empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 280px;
+    background: #fff;
+    border-radius: 12px;
+    border: 1.5px dashed #ddd;
+    color: #aaa;
+    gap: 10px;
+  }
+
+  .empty-state span { font-size: 0.9rem; }
+
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-overlay.open { display: flex; }
+
+  .modal {
+    background: #fff;
+    border-radius: 14px;
+    padding: 32px 28px 24px;
+    width: 100%;
+    max-width: 440px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    animation: fadeIn 0.2s ease;
+  }
+
+  .modal h2 { font-size: 1.15rem; font-weight: 800; margin-bottom: 20px; color: #111; }
+
+  .modal label { display: block; font-size: 0.8rem; font-weight: 600; color: #555; margin-bottom: 5px; }
+
+  .modal input, .modal textarea {
+    width: 100%;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 0.9rem;
+    font-family: inherit;
+    color: #111;
+    outline: none;
+    transition: border-color 0.15s;
+    margin-bottom: 16px;
+  }
+
+  .modal input:focus, .modal textarea:focus { border-color: #FFC904; }
+
+  .modal textarea { resize: vertical; min-height: 100px; }
+
+  .modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 4px; }
+
+  .btn-cancel {
+    padding: 9px 18px;
+    background: #f0f0f0;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: #444;
+    transition: background 0.15s;
+  }
+
+  .btn-cancel:hover { background: #e4e4e4; }
+
+  .btn-save {
+    padding: 9px 18px;
+    background: #FFC904;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    cursor: pointer;
+    color: #000;
+    transition: opacity 0.15s;
+  }
+
+  .btn-save:hover { opacity: 0.85; }
+
+  .notes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+
+  .note-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 18px 16px 14px;
+    border: 1.5px solid #eee;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  }
+
+  .note-card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; color: #111; }
+  .note-card p { font-size: 0.82rem; color: #666; line-height: 1.5; }
+  .note-card .note-date { font-size: 0.75rem; color: #aaa; margin-top: 10px; }
+</style>
+</head>
+<body>
+
+<aside id="sidebar">
+  
+
+  <button class="btn-add" onclick="openModal()">
+    <svg width="15" height="15" fill="none" viewBox="0 0 15 15">
+      <path d="M7.5 1v13M1 7.5h13" stroke="#FFC904" stroke-width="2.2" stroke-linecap="round"/>
+    </svg>
+    Adicionar nota
+  </button>
+
+  <nav>
+    <button class="nav-item active" data-page="inicio" onclick="navigate(this)">
+      <svg width="17" height="17" fill="none" viewBox="0 0 17 17"><path d="M2 7.5L8.5 2 15 7.5V15H11v-4H6v4H2V7.5z" stroke="#000" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      Início
+    </button>
+    <button class="nav-item" data-page="notas" onclick="navigate(this)">
+      <svg width="17" height="17" fill="none" viewBox="0 0 17 17"><rect x="2" y="2" width="13" height="13" rx="2" stroke="#000" stroke-width="1.6"/><path d="M5 6h7M5 9h5" stroke="#000" stroke-width="1.5" stroke-linecap="round"/></svg>
+      Notas
+    </button>
+    <button class="nav-item" data-page="fichas" onclick="navigate(this)">
+      <svg width="17" height="17" fill="none" viewBox="0 0 17 17"><path d="M3 3h11v11H3z" stroke="#000" stroke-width="1.6" stroke-linejoin="round"/><path d="M3 7h11M7 7v7" stroke="#000" stroke-width="1.5" stroke-linecap="round"/></svg>
+      Fichas
+    </button>
+    <button class="nav-item" data-page="contas" onclick="navigate(this)">
+      <svg width="17" height="17" fill="none" viewBox="0 0 17 17"><circle cx="8.5" cy="8.5" r="6" stroke="#000" stroke-width="1.6"/><path d="M8.5 5.5v5M6.5 9.5h3.5" stroke="#000" stroke-width="1.5" stroke-linecap="round"/></svg>
+      Contas
+    </button>
+    <button class="nav-item" data-page="fornecedores" onclick="navigate(this)">
+      <svg width="17" height="17" fill="none" viewBox="0 0 17 17"><path d="M2 13V7l6.5-4 6.5 4v6" stroke="#000" stroke-width="1.6" stroke-linejoin="round"/><rect x="6" y="9" width="5" height="4" rx="1" stroke="#000" stroke-width="1.4"/></svg>
+      Fornecedores
+    </button>
+  </nav>
+</aside>
+
+<div id="main">
+  <div id="topbar"></div>
+  <div id="content">
+
+    <div class="page active" id="page-inicio">
+      <div class="page-title">Bem-vindo</div>
+      <div class="page-subtitle">Selecione uma seção no menu lateral para começar.</div>
+      <div class="empty-state">
+        <svg width="36" height="36" fill="none" viewBox="0 0 36 36"><path d="M4 16L18 4l14 12V32H24V22H12v10H4V16z" stroke="#ccc" stroke-width="2" stroke-linejoin="round"/></svg>
+        <span>Nenhum conteúdo recente</span>
+      </div>
+    </div>
+
+    <div class="page" id="page-notas">
+      <div class="page-title">Notas</div>
+      <div class="page-subtitle">Suas anotações salvas.</div>
+      <div class="notes-grid" id="notes-grid">
+        <div class="empty-state" id="notes-empty" style="grid-column:1/-1">
+          <svg width="36" height="36" fill="none" viewBox="0 0 36 36"><rect x="4" y="4" width="28" height="28" rx="4" stroke="#ccc" stroke-width="2"/><path d="M10 13h16M10 19h11" stroke="#ccc" stroke-width="2" stroke-linecap="round"/></svg>
+          <span>Nenhuma nota ainda — adicione uma!</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="page" id="page-fichas">
+      <div class="page-title">Fichas</div>
+      <div class="page-subtitle">Gerencie suas fichas aqui.</div>
+      <div class="empty-state">
+        <svg width="36" height="36" fill="none" viewBox="0 0 36 36"><path d="M6 6h24v24H6z" stroke="#ccc" stroke-width="2" stroke-linejoin="round"/><path d="M6 16h24M16 16v14" stroke="#ccc" stroke-width="2" stroke-linecap="round"/></svg>
+        <span>Nenhuma ficha cadastrada</span>
+      </div>
+    </div>
+
+    <div class="page" id="page-contas">
+      <div class="page-title">Contas</div>
+      <div class="page-subtitle">Controle de contas e pagamentos.</div>
+      <div class="empty-state">
+        <svg width="36" height="36" fill="none" viewBox="0 0 36 36"><circle cx="18" cy="18" r="13" stroke="#ccc" stroke-width="2"/><path d="M18 11v10M14 19h8" stroke="#ccc" stroke-width="2" stroke-linecap="round"/></svg>
+        <span>Nenhuma conta registrada</span>
+      </div>
+    </div>
+
+    <div class="page" id="page-fornecedores">
+      <div class="page-title">Fornecedores</div>
+      <div class="page-subtitle">Lista de fornecedores cadastrados.</div>
+      <div class="empty-state">
+        <svg width="36" height="36" fill="none" viewBox="0 0 36 36"><path d="M4 28V15L18 4l14 11v13" stroke="#ccc" stroke-width="2" stroke-linejoin="round"/><rect x="13" y="20" width="10" height="8" rx="1" stroke="#ccc" stroke-width="2"/></svg>
+        <span>Nenhum fornecedor cadastrado</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-overlay" onclick="closeModalOutside(event)">
+  <div class="modal">
+    <h2>Nova Nota</h2>
+    <label>Título</label>
+    <input type="text" id="note-title" placeholder="Título da nota">
+    <label>Conteúdo</label>
+    <textarea id="note-body" placeholder="Escreva sua nota aqui..."></textarea>
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeModal()">Cancelar</button>
+      <button class="btn-save" onclick="saveNote()">Salvar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function navigate(btn) {
+    document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const page = btn.dataset.page;
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page-' + page).classList.add('active');
+    
+  }
+
+  function openModal() {
+    document.getElementById('modal-overlay').classList.add('open');
+    document.getElementById('note-title').focus();
+  }
+
+  function closeModal() {
+    document.getElementById('modal-overlay').classList.remove('open');
+    document.getElementById('note-title').value = '';
+    document.getElementById('note-body').value = '';
+  }
+
+  function closeModalOutside(e) {
+    if (e.target === document.getElementById('modal-overlay')) closeModal();
+  }
+
+  function saveNote() {
+    const title = document.getElementById('note-title').value.trim();
+    const body = document.getElementById('note-body').value.trim();
+    if (!title && !body) return;
+
+    const grid = document.getElementById('notes-grid');
+    const empty = document.getElementById('notes-empty');
+    if (empty) empty.remove();
+
+    const now = new Date().toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' });
+    const card = document.createElement('div');
+    card.className = 'note-card';
+    card.innerHTML = `
+      <h3>${title || 'Sem título'}</h3>
+      <p>${body || ''}</p>
+      <div class="note-date">${now}</div>
+    `;
+    grid.appendChild(card);
+    closeModal();
+
+    const notasBtn = document.querySelector('[data-page="notas"]');
+    navigate(notasBtn);
+  }
+</script>
+</body>
+</html>
